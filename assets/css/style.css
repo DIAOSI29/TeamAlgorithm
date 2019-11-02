@@ -1,0 +1,60 @@
+*,
+*:before,
+*:after {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+body {
+  background-image: url("../images/gradient.jpg");
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  height: 100vh;
+}
+
+@media only screen and (max-width: 767px) {
+  body {
+    background: url("../images/gradient.jpg") no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+  }
+}
+
+.container {
+  border: solid 2px black;
+  margin: 40px auto;
+  padding: 20px;
+  border-radius: 20px;
+  box-shadow: 20px black;
+}
+
+#weather {
+  border: solid 2px black;
+  min-height: 200px;
+  border-radius: 20px;
+}
+#clock {
+  border: solid 2px black;
+  min-height: 200px;
+  border-radius: 20px;
+}
+#buttons {
+  border: solid 2px black;
+  min-height: 200px;
+  border-radius: 20px;
+}
+#video {
+  border: solid 2px black;
+  min-height: 200px;
+  border-radius: 20px;
+  display: none;
+}
+#maps {
+  border: solid 2px black;
+  min-height: 200px;
+  border-radius: 20px;
+}
