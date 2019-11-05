@@ -74,33 +74,3 @@ body {
   margin: 20px;
   width: 95%;
 }
-
-div {
-  display: inline-block;
-  line-height: 1;
-  padding: 20px;
-  font-size: 40px;
-}
-
-span {
-  display: block;
-  font-size: 10px;
-  color: white;
-}
-
-#days {
-  font-size: 50px;
-  color: #db4844;
-}
-#hours {
-  font-size: 50px;
-  color: #f07c22;
-}
-#minutes {
-  font-size: 50px;
-  color: #f6da74;
-}
-#seconds {
-  font-size: 25px;
-  color: #abcd58;
-}
