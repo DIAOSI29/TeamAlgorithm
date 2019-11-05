@@ -16,12 +16,25 @@
     <link rel="stylesheet" href="assets/css/style.css">
   </head>
   <body>
-    <div class="container">
-      <div id="weather" class="row-fluid">Our Weather widget goes here:</div>
-      <div id="clock" class="row-fluid">Our clock/timer goes in here:</div>
+    <div class="container-fluid">
+            <div class="row">
+              <div id="weather" class="col">
+                  Our Weather widget goes here:
+              </div>
+              <div id="clock" class="col">
+                  <div id="timer">
+                      <div id="days"></div>
+                      <div id="hours"></div>
+                      <div id="minutes"></div>
+                      <div id="seconds"></div>
+                    </div>
+              </div>
+            </div>
       <div id="buttons" class="row-fluid">Choice buttons for the user:</div>
       <div id="video" class="row-fluid">Youtube video player:</div>
       <div id="maps" class="row-fluid">Our gogle map segment goes in here:</div>
     </div>
+  </div>
+  <script src="./assets/javascript/javascript.js"></script>
   </body>
 </html>
