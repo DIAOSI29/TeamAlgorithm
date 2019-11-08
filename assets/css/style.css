@@ -1,3 +1,5 @@
+/*please put your code into specified sections (SCROLL TO BOTTOM OF THE PAGE)*/
+/*tian start*/
 
 html,
 body {
@@ -7,6 +9,7 @@ body {
   display: grid;
   place-items: center;
   box-sizing: border-box;
+  overflow-x: hidden;
 }
 
 @media (min-aspect-ratio: 16/9) {
@@ -42,7 +45,7 @@ body {
   margin: 0;
   width: 100%;
   height: 100vh;
-  font-family: "Exo", sans-serif;
+  font-family: "Fredoka One", cursive;
   color: #fff;
   background: linear-gradient(
     -45deg,
@@ -158,19 +161,42 @@ body {
   font-family: "Nunito", sans-serif;
 }
 
-#loginBtn {
-  margin: auto;
-  font-size: 3rem;
-  font-family: "Caveat", cursive;
+#loginBtnLogo {
+  color: rgb(168, 29, 29);
 }
 
+#loginBtnLogo:hover {
+  color: green;
+  -webkit-transform: scaleX(-1);
+  transform: scaleX(-1);
+}
+#loginBtn {
+  margin: auto;
+  font-size: 5rem;
+  font-family: "Nunito", sans-serif;
+}
+#loginBtn:hover {
+  margin: auto;
+  font-size: 5rem;
+  font-family: "Nunito", sans-serif;
+  text-decoration: none;
+}
 .top-row {
   display: grid;
   grid-template-columns: 1fr 1fr 3fr;
 }
 
-body {
-  background: linear-gradient(90deg, #7474bf 10%, #348ac7 90%);
+.visuallyhidden {
+  position: absolute;
+
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+
+  clip: rect(0 0 0 0);
+  overflow: hidden;
 }
 #weather_wrapper {
   width: 400px;
@@ -224,47 +250,68 @@ body {
   padding: 20px 0 0;
   text-align: center;
 }
-
-.rain {
+.ExtraInfo {
+  width: 180px;
+  height: 50px;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  background: rgb(42, 178, 234);
+  font-weight: 700;
+  color: rgb(255, 255, 255);
+  text-align: center;
+}
+.minTemp {
   width: 50%;
   position: absolute;
   left: 10px;
   word-spacing: 60px;
   top: 3px;
 }
-.rain::before {
+/* .minTemp::before {
   display: block;
-  content: "\f04e";
-  font-family: weathericons;
+
   font-size: 40px;
   left: 6px;
   top: -4px;
   position: absolute;
-}
-.wind {
+} */
+.maxTemp {
   width: 50%;
   right: -10px;
   position: absolute;
   word-spacing: 60px;
   top: 3px;
 }
-.wind::before {
+/* .maxTemp::before {
   display: block;
-  content: "\f050";
-  font-family: weathericons;
+
   font-size: 25px;
   left: -10px;
   position: absolute;
   top: 5px;
-}
+} */
 
 .content-section {
-  height: 400px;
+  height: 500px;
   background: grey;
-  width: 100%;
-  margin-bottom: 20px;
+  width: 90%;
+
+  margin: 0 auto 20px;
 }
 
 .button-row {
   margin-bottom: 20px;
 }
+
+/*Tian start*/
+
+/*Kervin start*/
+/*Kervin end*/
+/*Piotr start*/
+
+/*Piotr end*/
+/*Firoz start*/
+/*Firoz end*/
+/*Jayson start*/
+/*Jayson end*/

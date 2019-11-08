@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <link rel="stylesheet" type="text/css" href="./assets/css/style.css" />
+
     <link
       rel="stylesheet"
       href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
@@ -28,7 +29,7 @@
     <title>Team Algorithm App</title>
   </head>
   <body>
-   <div class="welcomePage" display="hide" id="welcomePage">
+    <div class="welcomePage" id="welcomePage">
       <div class="welcomeContentDiv">
         <h1 id="welcomePageText1">
           This app is designed for all the hardworking coders as a means to add
@@ -37,89 +38,103 @@
         <h1 id="welcomePageText2">
           fun, info and relaxation
         </h1>
-        <a href="./TeamAlgorithm/index2.html" id="loginBtn">
-          <i class="fas fa-toggle-on"> CLICK ME</i></a
+        <a href="#" id="loginBtn">
+          <i id="loginBtnLogo" class="fas fa-toggle-on fa-flip-horizontal"></i>
+          CLICK ME</a
         >
       </div>
     </div>
-    <video
-      id="videoBG"
-      poster=""
-      src="../TeamAlgorithm/assets/assets/media.io_video.mp4"
-      autoplay
-      muted
-      loop
-    >
-      <source id="video" src="" type="video/mp4" />
-    </video>
-    <div class="top-row">
-      <div id="weather-widget">
-        <div id="weather_wrapper">
-          <div class="weatherCard">
-            <div class="currentTemp">
-              <span class="temp"> <span id="temperature">23</span> &deg;</span>
-              <span class="location" id="city">Nedlands</span>
-            </div>
-            <div class="currentWeather">
-              <span class="conditions"><i class="fas fa-sun fa-lg"></i></span>
+
+    <section class="appPage visuallyhidden" id="appPage">
+      <video id="videoBG" poster="" src="" autoplay muted loop>
+        <source id="video" src="" type="video/mp4" />
+      </video>
+      <div class="top-row">
+        <div id="weather-widget">
+          <div id="weather_wrapper">
+            <div class="weatherCard">
+              <div class="currentTemp">
+                <span class="temp">
+                  <span id="temperature">23</span> &deg;</span
+                >
+                <span class="location" id="city">Nedlands</span>
+              </div>
+              <div class="currentWeather">
+                <span class="conditions"><i class="fas fa-sun"></i></span>
+                <div class="ExtraInfo">
+                  <span class="minTemp">15&deg</span>
+                  <span class="maxTemp">30&deg</span>
+                </div>
+              </div>
             </div>
           </div>
         </div>
+        <div id="userText"></div>
+        <div id="clock-section">
+          <div id="clock" class="col"></div>
+        </div>
       </div>
-      <div id="userText"></div>
-      <div id="clock-section">
-        <div id="clock" class="col"></div>
+      <div class="button-row container-fluid">
+        <H1>I AM LOOKING FOR SOME</H1>
+        <div class="buttonList d-flex justify-content-between">
+          <button class="optionButton" id="timerBtn">
+            BREAK
+          </button>
+          <button class="optionButton" id="exerciseBtn">
+            EXERCISE
+          </button>
+          <button class="optionButton" id="puzzleBtn">FUN</button>
+          <button class="optionButton" id="trafficBtn">
+            TRAFFIC INFO
+          </button>
+        </div>
       </div>
-    </div>
-    <div class="button-row container-fluid">
-      <H1>I JUST WANT TO</H1>
-      <div class="buttonList d-flex justify-content-between">
-        <button class="optionButton" id="timerBtn">
-          SET A TIMER FOR A SHORT BREAK
-        </button>
-        <button class="optionButton" id="exerciseBtn">DO SOME EXERCISE</button>
-        <button class="optionButton" id="PuzzelBtn">HAVE SOME FUN</button>
-        <button class="optionButton" id="TrafficBtn">
-          KNOW THE TRAFFIC AROUND ME
-        </button>
-      </div>
-    </div>
-    <div class="sections container-fluid">
-      <div id="timerSection" class="row-fluid content-section">
-        this is where timer's gonna be. defaulted state:hide
-      </div>
-      <div id="exerciseSection" class="row-fluid content-section">
-        this is where timer's gonna be. defaulted state:hide
-      </div>
-      <div id="puzzelSection" class="row-fluid content-section">
-        this is where timer's gonna be. defaulted state:hide
-      </div>
-      <div id="trafficSection" class="row-fluid content-section">
-        this is where timer's gonna be. defaulted state:hide
-      </div>
-    </div>
-
-    <div></div>
-
-    <section class="appPage" display="hide"></section>
-    <script src="../TeamAlgorithm/assets/javascript/javascript.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <title>Team Algorithm App</title>
-  </head>
-  <body>
-    <div class="container-fluid">
-            <div class="row">
-              <div id="weather" class="col">
-                  Our Weather widget goes here:
-              </div>
-              <div id="clock" class="col">
-              </div>
+      <div class="sections container-fluid">
+        <div id="timerSection" class="row-fluid content-section">
+          this is where timer's gonna be. defaulted state:hide
+        </div>
+        <div id="exerciseSection" class="row-fluid content-section">
+          <button class="youtubeBtn">
+            neck and hopefully with an neck png
+          </button>
+          <button class="youtubeBtn">
+            shoulder and hopefully with an shoulder png
+          </button>
+          <button class="youtubeBtn">eye and hopefully with an eye png</button>
+          <button class="youtubeBtn">
+            back and hopefully with an back png
+          </button>
+          <button class="youtubeBtn">
+            waist and hopefully with an waist png
+          </button>
+          <form>
+            <div class="form-group">
+              <label for="exampleFormControlInput1"
+                >search for other exercises</label
+              >
+              <input
+                type="text"
+                class="form-control"
+                id="exerciseText"
+                placeholder="arm"
+              />
             </div>
-      <div id="buttons" class="row-fluid">Choice buttons for the user:</div>
-      <div id="video" class="row-fluid">Youtube video player:</div>
-      <div id="maps" class="row-fluid">Our gogle map segment goes in here:</div>
-    </div>
-  </div>
-  <script src="./assets/javascript/javascript.js"></script>
+          </form>
+
+          this is where youtube's gonna be. defaulted state:hide
+        </div>
+        <div id="puzzleSection" class="row-fluid content-section">
+          this is where puzzel's gonna be. defaulted state:hide
+        </div>
+        <div id="trafficSection" class="row-fluid content-section">
+          this is where google API's gonna be. defaulted state:hide
+        </div>
+        <div id="news" class="row-fluid content-section">
+          this where news gonna be
+        </div>
+      </div>
+    </section>
+
+    <script src="./assets/javascript/javascript.js"></script>
   </body>
 </html>
