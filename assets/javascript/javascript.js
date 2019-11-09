@@ -1,4 +1,5 @@
 $(document).ready(function() {
+  getLocation();
   //--Piotr--This section makes sure all sections are hidden--//
   //--Only 4 buttons are visible..rest hidden--//
   $("#exerciseSection").hide();
@@ -18,25 +19,42 @@ $(document).ready(function() {
     $(this).removeClass("fa-flip-horizontal");
   });
 
+  $(".aaa").click(function() {
+    $(this).toggleClass("onClickOption");
+  });
+
   $("#timerBtn").click(() => {
     let section = $("#timerSection");
+    $("#exerciseBtn").removeClass("onClickOption");
+    $("#puzzleBtn").removeClass("onClickOption");
+    $("#trafficBtn").removeClass("onClickOption");
     section.toggle();
   });
 
   $("#exerciseBtn").click(() => {
+    $("#timerBtn").removeClass("onClickOption");
+    $("#puzzleBtn").removeClass("onClickOption");
+    $("#trafficBtn").removeClass("onClickOption");
     let section = $("#exerciseSection");
     section.toggle();
   });
   $("#puzzleBtn").click(() => {
+    $("#timerBtn").removeClass("onClickOption");
+    $("#exerciseBtn").removeClass("onClickOption");
+    $("#trafficBtn").removeClass("onClickOption");
     let section = $("#puzzleSection");
     section.toggle();
   });
   $("#trafficBtn").click(() => {
+    $("#timerBtn").removeClass("onClickOption");
+    $("#exerciseBtn").removeClass("onClickOption");
+    $("#puzzleBtn").removeClass("onClickOption");
     let section = $("#trafficSection");
     section.toggle();
+    initMap();
   });
 
-  //timer//
+  //clock//
   function makeTimer() {
     var days = moment().format("ddd");
     var hours = moment().format("HH");
@@ -52,6 +70,44 @@ $(document).ready(function() {
   setInterval(function() {
     makeTimer();
   }, 1000);
+  //clock//
+
+  //google api start//
+  var x = document.getElementById("demo");
+
+  function getLocation() {
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition(showPosition);
+    } else {
+      x.innerHTML = "Geolocation is not supported by this browser.";
+    }
+  }
+
+  var lat = "";
+  var lon = "";
+  function showPosition(position) {
+    lat = position.coords.latitude;
+    lon = position.coords.longitude;
+    console.log(lat);
+    console.log(lon);
+    // x.innerHTML =
+    //   "Latitude: " +
+    //   position.coords.latitude +
+    //   "<br>Longitude: " +
+    //   position.coords.longitude;
+  }
+
+  function initMap() {
+    var map = new google.maps.Map(document.getElementById("map"), {
+      zoom: 14,
+      center: { lat: lat, lng: lon }
+    });
+
+    var trafficLayer = new google.maps.TrafficLayer();
+    trafficLayer.setMap(map);
+    console.log("this is" + lat);
+  }
+  //google api end//
 
   //section Tian end//
 

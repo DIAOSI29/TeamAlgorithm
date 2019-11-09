@@ -105,26 +105,26 @@
         <div></div>
       </div>
       <div class="button-row container-fluid">
-        <H1>I AM LOOKING FOR SOME</H1>
-        <div class="buttonList d-flex justify-content-center">
-          <ul id="buttons">
+        <h2>I WANT</h2>
+        <div class="buttonList ">
+          <ul id="buttons d-flex justify-content-center ">
             <li class="optionButton">Break </br> </br>
-              <a href="#">
+              <a href="#timerSection">
                 </br><i class="fas fa-user-clock aaa" id="timerBtn"></i>
               </a>
             </li>
             <li class="optionButton"> Exercise </br> </br>
-             <a href="#"></br>
+             <a href="#exerciseSection"></br>
                 <i class="fab fa-youtube aaa" id="exerciseBtn"></i>
               </a>
             </li>
             <li class="optionButton"> Fun </br> </br>
-              <a href="#"> 
+              <a href="#puzzleSection"> 
                 </br><i class="fas fa-puzzle-piece aaa" id="puzzleBtn"></i>
               </a>
             </li>
             <li class="optionButton">Info </br> </br>
-              <a href="#">
+              <a href="#trafficSection">
               </br><i class="fas fa-map-marked-alt aaa" id="trafficBtn"></i>
               </a>
             </li>
@@ -153,12 +153,12 @@
                       <button class="break" id="breakAdd">+</button>
                   </p>
               </div>
-          </div>
+           </div>
           <div class="clock">
               <p id="break-text" class="break-text">
                   Break!
               </p>
-              <p id="time-display">25:00</p>             
+               <p id="time-display">25:00</p>             
               <div class="newton-cradle">
                   <div id="leftBall" class="cord">
                       <div class="ball"></div>
@@ -202,15 +202,19 @@
           this is where puzzel's gonna be. defaulted state:hide
         </div>
         <div id="trafficSection" class="row-fluid content-section">
-          this is where google API's gonna be. defaulted state:hide
+        
+            <div id="map"></div>
         </div>
-        <div id="news" class="row-fluid content-section">
+         <div id="news" class="row-fluid content-section">
           this where news gonna be
         </div>
       </div>
-    </section>
+    
+     </section>
 
     <script src="./assets/javascript/javascript.js"></script>
     <script type="text/javascript" src="assets/javascript/workout-javascript.js"></script>
+       <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCNoDPLu9IZO9ylODNwx8AlxOn8r9mA5xk&callback=initMap">
+    </script>
   </body>
 </html>
