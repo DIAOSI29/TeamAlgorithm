@@ -20,10 +20,13 @@
       href="https://fonts.googleapis.com/css?family=Fredoka+One&display=swap"
       rel="stylesheet"
     />
+
     <link
       href="https://fonts.googleapis.com/css?family=Chathura|Playfair+Display+SC&display=swap"
       rel="stylesheet"
     />
+
+    <link href='https://fonts.googleapis.com/css?family=Orbitron' rel='stylesheet' type='text/css'>
 
     <script
       src="https://kit.fontawesome.com/a1562d6d36.js"
@@ -33,6 +36,7 @@
     <script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
 
     <title>Team Algorithm App</title>
+    <link rel="stylesheet" href="assets/css/style.css">
   </head>
   <body>
     <div class="welcomePage" id="welcomePage">
@@ -83,6 +87,7 @@
           </div>
         </div>
         <div id="userText"></div>
+
         <div id="clock-section" class="d-flex justify-content-end ">
           <div id="timer" style="white-space: nowrap">
             <div id="days"></div>
@@ -90,6 +95,10 @@
             <div id="minutes"></div>
             <div id="seconds"></div>
           </div>
+
+
+          
+
         </div>
         <div></div>
       </div>
@@ -122,7 +131,64 @@
       </div>
       <div class="sections container-fluid">
         <div id="timerSection" class="row-fluid content-section">
-          this is where timer's gonna be. defaulted state:hide
+          <h1 class="text-center"></h1>
+          <div class="settings row">
+              <div class="col-md-6 col-sm-6 col-lg-6">
+                  <p>
+                      Work
+                      <br>
+                      <button id="totSub">-</button>
+                      <span id="totTime">25</span>
+                      <button id="totAdd">+</button>
+                  </p>
+              </div>
+              <div class="col-md-6 col-sm-6 col-lg-6">
+                  <p>
+                      Break
+                      <br>
+                      <button class="break" id="breakSub">-</button>
+                      <span class="break" id="breakTime">5</span>
+                      <button class="break" id="breakAdd">+</button>
+                  </p>
+              </div>
+          </div>
+          <div class="clock">
+              <p id="break-text" class="break-text">
+                  Break!
+              </p>
+              <p id="time-display">25:00</p>             
+              <div class="newton-cradle">
+                  <div id="leftBall" class="cord">
+                      <div class="ball"></div>
+                  </div>
+                  <div class="cord">
+                      <div class="ball"></div>
+                  </div>
+                  <div class="cord">
+                      <div class="ball"></div>
+                  </div>
+                  <div class="cord">
+                      <div class="ball"></div>
+                  </div>
+                  <div class="cord">
+                      <div class="ball"></div>
+                  </div>
+                  <div class="cord">
+                      <div class="ball"></div>
+                  </div>
+                  <div id="rightBall" class="cord">
+                      <div class="ball" id="first"></div>
+                  </div>
+              </div>
+          </div>
+          <div class="controls text-center">
+              <button type="button" id="start">Start</button>
+              <button type="button" id="stop">Stop</button>    
+              <button type="button" id="reset">Reset</button>
+          </div>      
+          <audio id="notify">
+              <source src="assets/assets/notification.mp3" type="audio/mpeg"/>
+          </audio>
         </div>
         <div id="exerciseSection" class="row-fluid content-section">
           <button class="youtubeBtn">
