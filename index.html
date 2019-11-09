@@ -20,11 +20,17 @@
       href="https://fonts.googleapis.com/css?family=Fredoka+One&display=swap"
       rel="stylesheet"
     />
+    <link
+      href="https://fonts.googleapis.com/css?family=Chathura|Playfair+Display+SC&display=swap"
+      rel="stylesheet"
+    />
+
     <script
       src="https://kit.fontawesome.com/a1562d6d36.js"
       crossorigin="anonymous"
     ></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
 
     <title>Team Algorithm App</title>
   </head>
@@ -45,12 +51,19 @@
       </div>
     </div>
 
+    <video
+      id="videoBG"
+      poster=""
+      src="../../Team Algorithm/TeamAlgorithm/assets/assets/bg.mp4"
+      autoplay
+      muted
+      loop
+    >
+      <source id="video" src="" type="video/mp4" />
+    </video>
     <section class="appPage visuallyhidden" id="appPage">
-      <video id="videoBG" poster="" src="" autoplay muted loop>
-        <source id="video" src="" type="video/mp4" />
-      </video>
       <div class="top-row">
-        <div id="weather-widget">
+        <div id="weather-widget align-self-center">
           <div id="weather_wrapper">
             <div class="weatherCard">
               <div class="currentTemp">
@@ -70,23 +83,41 @@
           </div>
         </div>
         <div id="userText"></div>
-        <div id="clock-section">
-          <div id="clock" class="col"></div>
+        <div id="clock-section" class="d-flex justify-content-end ">
+          <div id="timer" style="white-space: nowrap">
+            <div id="days"></div>
+            <div id="hours"></div>
+            <div id="minutes"></div>
+            <div id="seconds"></div>
+          </div>
         </div>
+        <div></div>
       </div>
       <div class="button-row container-fluid">
         <H1>I AM LOOKING FOR SOME</H1>
         <div class="buttonList d-flex justify-content-between">
-          <button class="optionButton" id="timerBtn">
-            BREAK
-          </button>
-          <button class="optionButton" id="exerciseBtn">
-            EXERCISE
-          </button>
-          <button class="optionButton" id="puzzleBtn">FUN</button>
-          <button class="optionButton" id="trafficBtn">
-            TRAFFIC INFO
-          </button>
+          <ul id="buttons">
+            <li class="optionButton">Break
+              <a href="#">
+                </br><i class="fas fa-user-clock fa-15x" id="timerBtn"></i>
+              </a>
+            </li>
+            <li class="optionButton"> Exercise
+             <a href="#exerciseBtn"></br>
+                <i class="fab fa-youtube fa-15x" id="youtubeIcon"></i>
+              </a>
+            </li>
+            <li class="optionButton"> Fun
+              <a href="#puzzleBtn"> 
+                </br><i class="fas fa-puzzle-piece fa-15x" id="puzzleIcon"></i>
+              </a>
+            </li>
+            <li class="optionButton">Traffic Info
+              <a href="#trafficBtn">
+                <i class="fas fa-map-marked-alt fa-15x" id="mapIcon"></i>
+              </a>
+            </li>
+          </ul>
         </div>
       </div>
       <div class="sections container-fluid">
