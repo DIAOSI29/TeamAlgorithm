@@ -20,13 +20,23 @@
       href="https://fonts.googleapis.com/css?family=Fredoka+One&display=swap"
       rel="stylesheet"
     />
+
+    <link
+      href="https://fonts.googleapis.com/css?family=Chathura|Playfair+Display+SC&display=swap"
+      rel="stylesheet"
+    />
+
+    <link href='https://fonts.googleapis.com/css?family=Orbitron' rel='stylesheet' type='text/css'>
+
     <script
       src="https://kit.fontawesome.com/a1562d6d36.js"
       crossorigin="anonymous"
     ></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
 
     <title>Team Algorithm App</title>
+    <link rel="stylesheet" href="assets/css/style.css">
   </head>
   <body>
     <div class="welcomePage" id="welcomePage">
@@ -45,12 +55,19 @@
       </div>
     </div>
 
+    <video
+      id="videoBG"
+      poster=""
+      src="../../Team Algorithm/TeamAlgorithm/assets/assets/bg.mp4"
+      autoplay
+      muted
+      loop
+    >
+      <source id="video" src="" type="video/mp4" />
+    </video>
     <section class="appPage visuallyhidden" id="appPage">
-      <video id="videoBG" poster="" src="" autoplay muted loop>
-        <source id="video" src="" type="video/mp4" />
-      </video>
       <div class="top-row">
-        <div id="weather-widget">
+        <div id="weather-widget align-self-center">
           <div id="weather_wrapper">
             <div class="weatherCard">
               <div class="currentTemp">
@@ -70,28 +87,108 @@
           </div>
         </div>
         <div id="userText"></div>
-        <div id="clock-section">
-          <div id="clock" class="col"></div>
+
+        <div id="clock-section" class="d-flex justify-content-end ">
+          <div id="timer" style="white-space: nowrap">
+            <div id="days"></div>
+            <div id="hours"></div>
+            <div id="minutes"></div>
+            <div id="seconds"></div>
+          </div>
+
+
+          
+
         </div>
+        <div></div>
       </div>
       <div class="button-row container-fluid">
         <H1>I AM LOOKING FOR SOME</H1>
-        <div class="buttonList d-flex justify-content-between">
-          <button class="optionButton" id="timerBtn">
-            BREAK
-          </button>
-          <button class="optionButton" id="exerciseBtn">
-            EXERCISE
-          </button>
-          <button class="optionButton" id="puzzleBtn">FUN</button>
-          <button class="optionButton" id="trafficBtn">
-            TRAFFIC INFO
-          </button>
+        <div class="buttonList d-flex justify-content-center">
+          <ul id="buttons">
+            <li class="optionButton">Break
+              <a href="#">
+                </br><i class="fas fa-user-clock fa-lg" id="timerBtn"></i>
+              </a>
+            </li>
+            <li class="optionButton"> Exercise
+             <a href="#"></br>
+                <i class="fab fa-youtube fa-15x" id="exerciseBtn"></i>
+              </a>
+            </li>
+            <li class="optionButton"> Fun
+              <a href="#"> 
+                </br><i class="fas fa-puzzle-piece fa-15x" id="puzzleBtn"></i>
+              </a>
+            </li>
+            <li class="optionButton">Info
+              <a href="#">
+              </br><i class="fas fa-map-marked-alt fa-15x" id="trafficBtn"></i>
+              </a>
+            </li>
+          </ul>
         </div>
       </div>
       <div class="sections container-fluid">
         <div id="timerSection" class="row-fluid content-section">
-          this is where timer's gonna be. defaulted state:hide
+          <h1 class="text-center"></h1>
+          <div class="settings row">
+              <div class="col-md-6 col-sm-6 col-lg-6">
+                  <p>
+                      Work
+                      <br>
+                      <button id="totSub">-</button>
+                      <span id="totTime">25</span>
+                      <button id="totAdd">+</button>
+                  </p>
+              </div>
+              <div class="col-md-6 col-sm-6 col-lg-6">
+                  <p>
+                      Break
+                      <br>
+                      <button class="break" id="breakSub">-</button>
+                      <span class="break" id="breakTime">5</span>
+                      <button class="break" id="breakAdd">+</button>
+                  </p>
+              </div>
+          </div>
+          <div class="clock">
+              <p id="break-text" class="break-text">
+                  Break!
+              </p>
+              <p id="time-display">25:00</p>             
+              <div class="newton-cradle">
+                  <div id="leftBall" class="cord">
+                      <div class="ball"></div>
+                  </div>
+                  <div class="cord">
+                      <div class="ball"></div>
+                  </div>
+                  <div class="cord">
+                      <div class="ball"></div>
+                  </div>
+                  <div class="cord">
+                      <div class="ball"></div>
+                  </div>
+                  <div class="cord">
+                      <div class="ball"></div>
+                  </div>
+                  <div class="cord">
+                      <div class="ball"></div>
+                  </div>
+                  <div id="rightBall" class="cord">
+                      <div class="ball" id="first"></div>
+                  </div>
+              </div>
+          </div>
+          <div class="controls text-center">
+              <button type="button" id="start">Start</button>
+              <button type="button" id="stop">Stop</button>    
+              <button type="button" id="reset">Reset</button>
+          </div>      
+          <audio id="notify">
+              <source src="assets/assets/notification.mp3" type="audio/mpeg"/>
+          </audio>
         </div>
         <div id="exerciseSection" class="row-fluid content-section">
           <button class="youtubeBtn">

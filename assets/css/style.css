@@ -1,6 +1,8 @@
 /*please put your code into specified sections (SCROLL TO BOTTOM OF THE PAGE)*/
 /*tian start*/
-
+:root {
+  font-size: 20px;
+}
 html,
 body {
   width: 100vw;
@@ -10,6 +12,7 @@ body {
   place-items: center;
   box-sizing: border-box;
   overflow-x: hidden;
+  font-size: 15px;
 }
 
 @media (min-aspect-ratio: 16/9) {
@@ -27,15 +30,28 @@ body {
 }
 
 @media (max-width: 767px) {
-  #videoBG {
-    display: none;
+  .top-row {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 2fr 0 1fr;
   }
+
   body {
     background: url("poster.jpg");
     background-size: cover;
   }
 }
 
+@media (min-width: 767px) {
+  .top-row {
+    display: grid;
+    grid-template-columns: 1fr minmax(5px, 20px) minmax(200px, 2fr);
+    grid-template-rows: auto;
+  }
+
+  /* #clock-section {
+  } */
+}
 #videoBG {
   position: fixed;
   z-index: -1;
@@ -73,7 +89,7 @@ body {
 
 .welcomePage {
   display: grid;
-  grid-template-columns: 1fr minmax(1fr 400px) 1fr;
+  grid-template-columns: 1fr minmax(0, 400px) 1fr;
   place-items: center;
 }
 .welcomeContentDiv {
@@ -110,7 +126,7 @@ body {
 
 body {
   font-family: helvetica, arial, sans-serif;
-  background-color: #2e2e31;
+  /* background-color:  */
 }
 
 .welcomeContentDiv {
@@ -181,10 +197,6 @@ body {
   font-family: "Nunito", sans-serif;
   text-decoration: none;
 }
-.top-row {
-  display: grid;
-  grid-template-columns: 1fr 1fr 3fr;
-}
 
 .visuallyhidden {
   position: absolute;
@@ -198,12 +210,19 @@ body {
   clip: rect(0 0 0 0);
   overflow: hidden;
 }
+
+h1 {
+  margin-left: 5%;
+  color: rgb(221, 221, 221);
+  font-family: "Playfair Display SC", serif;
+}
 #weather_wrapper {
-  width: 400px;
-  margin: 100px auto;
+  min-width: 400px;
+  margin: 30px;
+  display: inline-block;
 }
 .weatherCard {
-  width: 400px;
+  /* width: 400px; */
   height: 200px;
   font-family: "Open Sans";
   position: relative;
@@ -223,7 +242,7 @@ body {
   height: 200px;
   background: rgb(237, 237, 237);
   margin: 0;
-  position: absolute;
+
   top: 0;
   right: 0;
 }
@@ -300,11 +319,74 @@ body {
   margin: 0 auto 20px;
 }
 
-.button-row {
-  margin-bottom: 20px;
+.optionButton {
+  list-style-type: none;
+  line-height: auto;
+  color: orange;
 }
 
-/*Tian start*/
+/* #timerIcon,
+#youtubeIcon,
+#puzzleIcon,
+#mapIcon {
+  font-size: 50px;
+} */
+.button-row {
+  margin: 20px 0;
+
+  display: grid;
+}
+#buttons {
+  display: grid;
+  place-items: center;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+
+#timer {
+  margin: 20px 10px 0 0;
+}
+#timer,
+#days,
+#hours,
+#minutes,
+#seconds {
+  font-family: "Playfair Display SC", serif;
+  display: inline-block;
+  line-height: 20px;
+  padding: 10px;
+  font-size: 2rem;
+  margin-bottom: 5px;
+}
+
+span {
+  display: block;
+  font-size: 20px;
+  color: white;
+}
+
+#days {
+  font-size: 2rem;
+  color: #db4844;
+  margin-left: 20px;
+}
+#hours {
+  font-size: 2rem;
+  color: #f07c22;
+}
+#minutes {
+  font-size: 2rem;
+  color: #f6da74;
+}
+#seconds {
+  font-size: 2rem;
+  color: #abcd58;
+}
+
+#appPage {
+  background: none;
+}
+
+/*Tian end*/
 
 /*Kervin start*/
 /*Kervin end*/
@@ -317,4 +399,146 @@ object {
 /*Firoz start*/
 /*Firoz end*/
 /*Jayson start*/
+
+/* body{
+  color: white;
+  font-family: 'Josefin Slab';
+} */
+
+#timerSection {
+  /* background-color: grey; */
+  padding-top: 5px;
+ 
+}
+
+.settings{
+  width: 60%;
+  margin-top: 20px;
+  margin-left: 20%;
+  margin-right: 20%;
+  font-family: 'Orbitron', sans-serif;
+}
+
+.settings p,span{
+  text-align: center;
+  font-size: 18px;
+}
+
+.settings button{
+  width: 50px;
+  height: 50px;
+  padding: 10px;
+  border: none;
+  outline: none;
+  background: none;
+}
+
+.settings button:hover{
+  color: #aef;
+}
+
+.clock{
+  font-family: 'Orbitron', sans-serif;
+  border-radius: 50%;
+  border: solid 2px #aef;
+  width: 300px;
+  height: 300px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+#break-text {
+  font-size: 20px;
+  margin-top: 70px;
+  visibility: hidden;
+}
+
+#time-display {
+  font-size: 65px;
+  margin-bottom: 0px;
+}
+
+.newton-cradle{
+  width: 110px;
+  height: 100px;
+  margin-left: auto;
+  margin-right: auto;
+
+}
+
+.controls button{
+  margin-top: 20px;
+  width: 100px;
+  height: 30px;
+  border: 1px solid #aef;
+  outline: none;
+  background: none;
+  border-radius: 5px;
+}
+
+.controls {
+  font-family: 'Orbitron', sans-serif;
+}
+
+.controls button:hover{
+  background-color: #aef;
+}
+
+.cord{
+  padding-top:45px;
+  width:15px;
+  transform: rotate(0deg);
+  transform-origin:50% 50%;
+  float:left;
+}
+
+
+.ball{
+  background:#aef;
+  width:15px;
+  height:15px;
+  float:left;
+  border-radius:50%;
+}
+
+.leftMove{
+  animation: leftBall .5s ease-in-out 0s infinite alternate;
+}
+.rightMove{
+  animation: rightBall .5s ease-in-out 0s infinite alternate;
+}
+
+
+@keyframes leftBall
+{
+0% {
+  transform: rotate(0deg) translateY(0px);
+  }
+/*this pauses the ball at the begining*/
+50% {
+  transform: rotate(0deg) translateY(0px);
+  }
+100% {
+  transform: rotate(50deg) translateY(-20px);
+  }
+
+}
+
+@keyframes rightBall
+{
+0% {
+  transform: rotate(-50deg) translateY(-20px);
+  }
+/*this pauses the ball at the begining*/
+50% {
+  transform: rotate(0deg) translateY(0px);
+  }
+100% {
+  transform: rotate(0deg) translateY(0px)
+      translateX(0px);
+  }
+
+}
+
 /*Jayson end*/
