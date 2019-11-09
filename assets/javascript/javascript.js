@@ -1,36 +1,50 @@
-function makeTimer() {
-  //		var endTime = new Date("29 April 2018 9:56:00 GMT+01:00");
-  var endTime = new Date("29 April 2020 9:56:00 GMT+01:00");
-  endTime = Date.parse(endTime) / 1000;
+$(document).ready(function() {
+  //section Tian start//
 
-  var now = new Date();
-  now = Date.parse(now) / 1000;
+  $("#loginBtn").click(e => {
+    $(".welcomePage").hide();
+    $("#appPage").removeClass("visuallyhidden");
+  });
 
-  var timeLeft = endTime - now;
+  $("#loginBtnLogo").hover(() => {
+    $(this).removeClass("fa-flip-horizontal");
+  });
 
-  var days = Math.floor(timeLeft / 86400);
-  var hours = Math.floor((timeLeft - days * 86400) / 3600);
-  var minutes = Math.floor((timeLeft - days * 86400 - hours * 3600) / 60);
-  var seconds = Math.floor(
-    timeLeft - days * 86400 - hours * 3600 - minutes * 60
-  );
+  $("#timerBtn").click(() => {
+    let section = $("#timerSection");
+    section.toggle();
+  });
 
-  if (hours < "10") {
-    hours = "0" + hours;
-  }
-  if (minutes < "10") {
-    minutes = "0" + minutes;
-  }
-  if (seconds < "10") {
-    seconds = "0" + seconds;
-  }
+  $("#exerciseBtn").click(() => {
+    let section = $("#exerciseSection");
+    section.toggle();
+  });
+  $("#puzzleBtn").click(() => {
+    let section = $("#puzzleSection");
+    section.toggle();
+  });
+  $("#trafficBtn").click(() => {
+    let section = $("#trafficSection");
+    section.toggle();
+  });
 
-  $("#days").html(days + "<span>Days</span>");
-  $("#hours").html(hours + "<span>Hours</span>");
-  $("#minutes").html(minutes + "<span>Minutes</span>");
-  $("#seconds").html(seconds + "<span>Seconds</span>");
-}
+  //section Tian end//
 
-setInterval(function() {
-  makeTimer();
-}, 1000);
+  //BEFORE EVERYONE FINISH THEIR OWN PART I THINK WE SHOULD SPLIT OUR JS CODE SO THAT WE CAN EASILY KEEP TRACK OF OUR STAFF AND MAKE CHANGES//
+
+  //section Kervin start//
+
+  //section Kervin end//
+
+  //section Jayson start//
+
+  //section Jayson end//
+
+  //section Firoz start//
+
+  //section Firoz end//
+
+  //section Piotr start//
+
+  //section Piotr end//
+});
