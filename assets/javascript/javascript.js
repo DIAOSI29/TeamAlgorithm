@@ -5,6 +5,10 @@ $(document).ready(function() {
   $("#puzzleSection").hide();
   $("#timerSection").hide();
   $("#trafficSection").hide();
+<<<<<<< HEAD
+=======
+  $("#puzzleSection").hide();
+>>>>>>> master
   //--End--//
 
   //section Tian start//
@@ -261,6 +265,10 @@ $(document).ready(function() {
       '<object data="https://melonek.github.io/Team-Algorithm-Trivia/"/>'
     );
   });
+<<<<<<< HEAD
+=======
+
+>>>>>>> master
   let timeSect = $("#timerSection");
   let exerciseSect = $("#exerciseSection");
   let puzzleSect = $("#puzzleSection");
