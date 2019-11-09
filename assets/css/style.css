@@ -411,7 +411,8 @@ object {
   padding-top: 5px;
   width: 450px;
   height: 550px;
-  color: white;;
+  color: white;
+  display: block !important;
  
 }
 
