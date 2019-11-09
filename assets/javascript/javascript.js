@@ -31,6 +31,10 @@ $(document).ready(function() {
     section.toggle();
   });
 
+  $("#b1").click(() => {
+    $("#timerSection").hide();
+  });
+
   $("#exerciseBtn").click(() => {
     $("#timerBtn").removeClass("onClickOption");
     $("#puzzleBtn").removeClass("onClickOption");
@@ -38,6 +42,11 @@ $(document).ready(function() {
     let section = $("#exerciseSection");
     section.toggle();
   });
+
+  $("#b2").click(() => {
+    $("#exerciseSection").hide();
+  });
+
   $("#puzzleBtn").click(() => {
     $("#timerBtn").removeClass("onClickOption");
     $("#exerciseBtn").removeClass("onClickOption");
@@ -45,6 +54,11 @@ $(document).ready(function() {
     let section = $("#puzzleSection");
     section.toggle();
   });
+
+  $("#b3").click(() => {
+    $("#puzzleSection").hide();
+  });
+
   $("#trafficBtn").click(() => {
     $("#timerBtn").removeClass("onClickOption");
     $("#exerciseBtn").removeClass("onClickOption");
@@ -52,6 +66,10 @@ $(document).ready(function() {
     let section = $("#trafficSection");
     section.toggle();
     initMap();
+  });
+
+  $("#b4").click(() => {
+    $("#trafficSection").hide();
   });
 
   //clock//
@@ -105,7 +123,6 @@ $(document).ready(function() {
 
     var trafficLayer = new google.maps.TrafficLayer();
     trafficLayer.setMap(map);
-    console.log("this is" + lat);
   }
   //google api end//
 

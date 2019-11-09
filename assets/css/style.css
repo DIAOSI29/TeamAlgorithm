@@ -483,13 +483,45 @@ ul li a:hover {
   height: auto;
 }
 /*map section end*/
+/*for sections start*/
+#exerciseSection {
+  overflow: scroll;
+}
+
+.closeBtn {
+  position: relative;
+  top: 10px;
+  left: 10px;
+  z-index: 1;
+  display: block;
+  margin-bottom: 15px;
+  background: transparent;
+  border: 1px solid white;
+  color: white;
+  font-weight: 800;
+}
+
+.closeBtn:hover {
+  position: relative;
+  top: 10px;
+  left: 10px;
+  z-index: 1;
+  display: block;
+  margin-bottom: 15px;
+  background: white;
+  border: 1px solid white;
+  color: black;
+  font-weight: 800;
+}
+/*for sections end*/
+
 /*Tian end*/
 
 /*Kervin start*/
 /*Kervin end*/
 /*Piotr start*/
 object {
-  height: 100vh;
+  height: 90vh;
   width: 100%;
 }
 /*Piotr end*/
