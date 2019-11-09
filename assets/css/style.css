@@ -1,60 +1,317 @@
-*,
-*:before,
-*:after {
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
-}
+/*please put your code into specified sections (SCROLL TO BOTTOM OF THE PAGE)*/
+/*tian start*/
+
+html,
 body {
-  background-image: url("../images/gradient.jpg");
-  background-position: center center;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-size: cover;
+  width: 100vw;
   height: 100vh;
+  margin: 0;
+  display: grid;
+  place-items: center;
+  box-sizing: border-box;
+  overflow-x: hidden;
 }
 
-@media only screen and (max-width: 767px) {
+@media (min-aspect-ratio: 16/9) {
+  #videoBG {
+    width: 100%;
+    height: auto;
+  }
+}
+
+@media (max-aspect-ratio: 16/9) {
+  #videoBG {
+    width: auto;
+    height: 100%;
+  }
+}
+
+@media (max-width: 767px) {
+  #videoBG {
+    display: none;
+  }
   body {
-    background: url("../images/gradient.jpg") no-repeat center center fixed;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
+    background: url("poster.jpg");
     background-size: cover;
   }
 }
 
-.container {
-  border: solid 2px black;
-  margin: 40px auto;
-  padding: 20px;
-  border-radius: 20px;
-  box-shadow: 20px black;
+#videoBG {
+  position: fixed;
+  z-index: -1;
 }
 
-#weather {
-  border: solid 2px black;
-  min-height: 200px;
-  border-radius: 20px;
+.welcomePage {
+  margin: 0;
+  width: 100%;
+  height: 100vh;
+  font-family: "Fredoka One", cursive;
+  color: #fff;
+  background: linear-gradient(
+    -45deg,
+    #d1bc01,
+    #ee7752,
+    #e73c7e,
+    #0f7499,
+    #00c99a
+  );
+  background-size: 400% 400%;
+  animation: gradientBG 15s ease infinite;
 }
-#clock {
-  border: solid 2px black;
-  min-height: 200px;
-  border-radius: 20px;
+
+@keyframes gradientBG {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
 }
-#buttons {
-  border: solid 2px black;
-  min-height: 200px;
-  border-radius: 20px;
+
+.welcomePage {
+  display: grid;
+  grid-template-columns: 1fr minmax(1fr 400px) 1fr;
+  place-items: center;
 }
-#video {
-  border: solid 2px black;
-  min-height: 200px;
-  border-radius: 20px;
-  display: none;
+.welcomeContentDiv {
+  grid-column-start: 1;
+  margin-top: 15%;
+  margin-bottom: 30%;
+  text-align: center;
 }
-#maps {
-  border: solid 2px black;
-  min-height: 200px;
-  border-radius: 20px;
+
+#welcomePageText1 {
+  font-size: 2rem;
+  text-align: center;
+  color: rgb(216, 216, 216);
+
+  font-family: "Fredoka One", cursive;
 }
+
+#welcomePageText2 {
+  font-size: 3rem;
+  text-align: center;
+  color: rgb(216, 216, 216);
+  /* font-family: "Caveat", cursive; */
+  font-family: "Fredoka One", cursive;
+}
+
+@keyframes tipsy {
+  0 {
+    transform: translateX(-50%) translateY(-50%) rotate(0deg);
+  }
+  100% {
+    transform: translateX(-50%) translateY(-50%) rotate(360deg);
+  }
+}
+
+body {
+  font-family: helvetica, arial, sans-serif;
+  background-color: #2e2e31;
+}
+
+.welcomeContentDiv {
+  color: #fffbf1;
+  text-shadow: 0 20px 25px #2e2e31, 0 40px 60px #2e2e31;
+  font-size: 80px;
+  font-weight: bold;
+  text-decoration: none;
+  /* letter-spacing: -3px; */
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+}
+
+.welcomeContentDiv:before,
+.welcomeContentDiv:after {
+  content: "";
+  padding: 0.9em 0.4em;
+  position: absolute;
+  left: 50%;
+  width: 100%;
+  top: 50%;
+  display: block;
+  border: 15px solid red;
+  transform: translateX(-50%) translateY(-50%) rotate(0deg);
+  animation: 10s infinite alternate ease-in-out tipsy;
+}
+
+.welcomeContentDiv:before {
+  border-color: #d9524a #d9524a rgba(0, 0, 0, 0) rgba(0, 0, 0, 0);
+  z-index: -1;
+}
+
+.welcomeContentDiv:after {
+  border-color: rgba(0, 0, 0, 0) rgba(0, 0, 0, 0) #d9524a #d9524a;
+  box-shadow: 25px 25px 25px rgba(46, 46, 49, 0.8);
+}
+
+#loginText {
+  margin-bottom: 20px;
+  background-color: #3f3f3f;
+  border: 5px solid #5d8ffc;
+  border-radius: 5px;
+  padding: 15px;
+  color: white;
+  font-family: "Nunito", sans-serif;
+}
+
+#loginBtnLogo {
+  color: rgb(168, 29, 29);
+}
+
+#loginBtnLogo:hover {
+  color: green;
+  -webkit-transform: scaleX(-1);
+  transform: scaleX(-1);
+}
+#loginBtn {
+  margin: auto;
+  font-size: 5rem;
+  font-family: "Nunito", sans-serif;
+}
+#loginBtn:hover {
+  margin: auto;
+  font-size: 5rem;
+  font-family: "Nunito", sans-serif;
+  text-decoration: none;
+}
+.top-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr 3fr;
+}
+
+.visuallyhidden {
+  position: absolute;
+
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+#weather_wrapper {
+  width: 400px;
+  margin: 100px auto;
+}
+.weatherCard {
+  width: 400px;
+  height: 200px;
+  font-family: "Open Sans";
+  position: relative;
+}
+.currentTemp {
+  width: 220px;
+  height: 200px;
+  background: rgb(41, 41, 41);
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.currentWeather {
+  display: grid;
+  place-items: center;
+  width: 180px;
+  height: 200px;
+  background: rgb(237, 237, 237);
+  margin: 0;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+.temp {
+  font-size: 80px;
+  text-align: center;
+  display: block;
+  font-weight: 300;
+  color: rgb(255, 255, 255);
+  padding: 20px 0 0;
+}
+.location {
+  color: rgb(255, 255, 255);
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 30px;
+  display: block;
+}
+.conditions {
+  font-family: weathericons;
+  font-size: 80px;
+  display: block;
+  padding: 20px 0 0;
+  text-align: center;
+}
+.ExtraInfo {
+  width: 180px;
+  height: 50px;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  background: rgb(42, 178, 234);
+  font-weight: 700;
+  color: rgb(255, 255, 255);
+  text-align: center;
+}
+.minTemp {
+  width: 50%;
+  position: absolute;
+  left: 10px;
+  word-spacing: 60px;
+  top: 3px;
+}
+/* .minTemp::before {
+  display: block;
+
+  font-size: 40px;
+  left: 6px;
+  top: -4px;
+  position: absolute;
+} */
+.maxTemp {
+  width: 50%;
+  right: -10px;
+  position: absolute;
+  word-spacing: 60px;
+  top: 3px;
+}
+/* .maxTemp::before {
+  display: block;
+
+  font-size: 25px;
+  left: -10px;
+  position: absolute;
+  top: 5px;
+} */
+
+.content-section {
+  height: 500px;
+  background: grey;
+  width: 90%;
+
+  margin: 0 auto 20px;
+}
+
+.button-row {
+  margin-bottom: 20px;
+}
+
+/*Tian start*/
+
+/*Kervin start*/
+/*Kervin end*/
+/*Piotr start*/
+
+/*Piotr end*/
+/*Firoz start*/
+/*Firoz end*/
+/*Jayson start*/
+/*Jayson end*/
