@@ -35,7 +35,17 @@ body {
     grid-template-columns: 1fr;
     grid-template-rows: 2fr 0 1fr;
   }
-
+  .optionButton {
+    /* list-style-type: none;
+    line-height: auto;
+    color: white;
+    margin-top: 10px;
+    font-size: 20px;
+    text-align: center;
+    font-family: "Playfair Display SC", serif;
+    display: inline-block; */
+    margin: 0 20px;
+  }
   body {
     background: url("poster.jpg");
     background-size: cover;
@@ -212,8 +222,8 @@ body {
   overflow: hidden;
 }
 
-h1 {
-  margin-left: 5%;
+h2 {
+  margin: 40px auto;
   color: rgb(221, 221, 221);
   font-family: "Playfair Display SC", serif;
 }
@@ -313,27 +323,31 @@ h1 {
 } */
 
 .content-section {
-  height: auto;
-  width: 90%;
+  height: 100vh;
+  width: 100%;
   overflow: hidden;
   background: transparent;
-  margin: 0 auto 20px;
+  margin: 40px 0;
+  color: white;
 }
 
 .optionButton {
   list-style-type: none;
   line-height: auto;
   color: white;
-  margin: 10px 40px;
+  margin-top: 10px;
   font-size: 20px;
   text-align: center;
   font-family: "Playfair Display SC", serif;
+  display: inline-block;
+  margin: 0 50px;
 }
 
 .button-row {
-  margin: 20px 0;
-
+  margin: 50px 0 0 0;
+  border: 3px solid white;
   display: grid;
+  padding: 20px;
 }
 .aaa {
   margin-top: 20px;
@@ -341,12 +355,13 @@ h1 {
   font-size: 5rem;
 }
 .buttonList {
-  margin: 50px;
+  margin: 10px;
 }
 #buttons {
   display: grid;
   place-items: center;
   grid-template-columns: 1fr 1fr 1fr 1fr;
+  width: 100%;
 }
 
 #timer {
@@ -373,20 +388,20 @@ span {
 
 #days {
   font-size: 2rem;
-  color: #db4844;
+  color: white;
   margin-left: 20px;
 }
 #hours {
   font-size: 2rem;
-  color: #f07c22;
+  color: white;
 }
 #minutes {
   font-size: 2rem;
-  color: #f6da74;
+  color: white;
 }
 #seconds {
   font-size: 2rem;
-  color: #abcd58;
+  color: white;
 }
 
 #appPage {
@@ -432,24 +447,73 @@ ul li a::before {
   width: 100%;
   height: 100%;
   border-radius: 50%;
-  background: #ffee10;
+  background: white;
   transition: 0.5s;
   transform: scale(0.9);
   z-index: -1;
+  color: white;
+}
+
+.onClickOption {
+  color: white;
+  background: none;
 }
 
 ul li a:hover::before {
   transform: scale(1.1);
-  box-shadow: 0 0 15px #ffee10;
+  box-shadow: 0 0 15px white;
+  background: white;
+  color: white;
 }
 
 ul li a:hover {
-  color: #ffee10;
-  box-shadow: 0 0 5px #ffee10;
-  text-shadow: 0 0 5px #ffee10;
+  color: white;
+  box-shadow: 0 0 5px white;
+  text-shadow: 0 0 5px white;
 }
 
 /*button section end*/
+
+/*map section start*/
+#map {
+  height: 100vh;
+}
+
+#trafficSection {
+  height: auto;
+}
+/*map section end*/
+/*for sections start*/
+#exerciseSection {
+  overflow: scroll;
+}
+
+.closeBtn {
+  position: relative;
+  top: 10px;
+  left: 10px;
+  z-index: 1;
+  display: block;
+  margin-bottom: 15px;
+  background: transparent;
+  border: 1px solid white;
+  color: white;
+  font-weight: 800;
+}
+
+.closeBtn:hover {
+  position: relative;
+  top: 10px;
+  left: 10px;
+  z-index: 1;
+  display: block;
+  margin-bottom: 15px;
+  background: white;
+  border: 1px solid white;
+  color: black;
+  font-weight: 800;
+}
+/*for sections end*/
 
 /*Tian end*/
 
@@ -457,7 +521,7 @@ ul li a:hover {
 /*Kervin end*/
 /*Piotr start*/
 object {
-  height: 100vh;
+  height: 90vh;
   width: 100%;
 }
 /*Piotr end*/
