@@ -1,4 +1,12 @@
 $(document).ready(function() {
+  //--Piotr--This section makes sure all sections are hidden--//
+  //--Only 4 buttons are visible..rest hidden--//
+  $("#exerciseSection").hide();
+  $("#timerSection").hide();
+  $("#trafficSection").hide();
+  $("#news").hide();
+  //--End--//
+
   //section Tian start//
 
   $("#loginBtn").click(e => {
@@ -45,6 +53,12 @@ $(document).ready(function() {
   //section Firoz end//
 
   //section Piotr start//
-
+  $("#puzzleBtn").click(() => {
+    let section = $("#puzzleSection");
+    section.toggle();
+    $(section).html(
+      '<object data="https://melonek.github.io/Team-Algorithm-Trivia/"/>'
+    );
+  });
   //section Piotr end//
 });
