@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <link rel="stylesheet" type="text/css" href="./assets/css/style.css" />
+    <!-- Youtube CSS -->
+    <link rel ="stylesheet" type="text/css" href="assets/css/workout-style.css"/>
 
     <link
       rel="stylesheet"
@@ -20,12 +22,20 @@
       href="https://fonts.googleapis.com/css?family=Fredoka+One&display=swap"
       rel="stylesheet"
     />
+
+    <link
+      href="https://fonts.googleapis.com/css?family=Chathura|Playfair+Display+SC&display=swap"
+      rel="stylesheet"
+    />
+
     <link href='https://fonts.googleapis.com/css?family=Orbitron' rel='stylesheet' type='text/css'>
+
     <script
       src="https://kit.fontawesome.com/a1562d6d36.js"
       crossorigin="anonymous"
     ></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
 
     <title>Team Algorithm App</title>
     <link rel="stylesheet" href="assets/css/style.css">
@@ -47,12 +57,19 @@
       </div>
     </div>
 
+    <video
+      id="videoBG"
+      poster=""
+      src="./assets/assets/bg.mp4"
+      autoplay
+      muted
+      loop
+    >
+      <source id="video" src="" type="video/mp4" />
+    </video>
     <section class="appPage visuallyhidden" id="appPage">
-      <video id="videoBG" poster="" src="" autoplay muted loop>
-        <source id="video" src="" type="video/mp4" />
-      </video>
       <div class="top-row">
-        <div id="weather-widget">
+        <div id="weather-widget align-self-center">
           <div id="weather_wrapper">
             <div class="weatherCard">
               <div class="currentTemp">
@@ -72,23 +89,46 @@
           </div>
         </div>
         <div id="userText"></div>
-        <div id="clock-section">
+
+        <div id="clock-section" class="d-flex justify-content-end ">
+          <div id="timer" style="white-space: nowrap">
+            <div id="days"></div>
+            <div id="hours"></div>
+            <div id="minutes"></div>
+            <div id="seconds"></div>
+          </div>
+
+
           
+
         </div>
+        <div></div>
       </div>
       <div class="button-row container-fluid">
         <H1>I AM LOOKING FOR SOME</H1>
-        <div class="buttonList d-flex justify-content-between">
-          <button class="optionButton" id="timerBtn">
-            BREAK
-          </button>
-          <button class="optionButton" id="exerciseBtn">
-            EXERCISE
-          </button>
-          <button class="optionButton" id="puzzleBtn">FUN</button>
-          <button class="optionButton" id="trafficBtn">
-            TRAFFIC INFO
-          </button>
+        <div class="buttonList d-flex justify-content-center">
+          <ul id="buttons">
+            <li class="optionButton">Break </br> </br>
+              <a href="#">
+                </br><i class="fas fa-user-clock aaa" id="timerBtn"></i>
+              </a>
+            </li>
+            <li class="optionButton"> Exercise </br> </br>
+             <a href="#"></br>
+                <i class="fab fa-youtube aaa" id="exerciseBtn"></i>
+              </a>
+            </li>
+            <li class="optionButton"> Fun </br> </br>
+              <a href="#"> 
+                </br><i class="fas fa-puzzle-piece aaa" id="puzzleBtn"></i>
+              </a>
+            </li>
+            <li class="optionButton">Info </br> </br>
+              <a href="#">
+              </br><i class="fas fa-map-marked-alt aaa" id="trafficBtn"></i>
+              </a>
+            </li>
+          </ul>
         </div>
       </div>
       <div class="sections container-fluid">
@@ -153,34 +193,10 @@
           </audio>
         </div>
         <div id="exerciseSection" class="row-fluid content-section">
-          <button class="youtubeBtn">
-            neck and hopefully with an neck png
-          </button>
-          <button class="youtubeBtn">
-            shoulder and hopefully with an shoulder png
-          </button>
-          <button class="youtubeBtn">eye and hopefully with an eye png</button>
-          <button class="youtubeBtn">
-            back and hopefully with an back png
-          </button>
-          <button class="youtubeBtn">
-            waist and hopefully with an waist png
-          </button>
-          <form>
-            <div class="form-group">
-              <label for="exampleFormControlInput1"
-                >search for other exercises</label
-              >
-              <input
-                type="text"
-                class="form-control"
-                id="exerciseText"
-                placeholder="arm"
-              />
-            </div>
-          </form>
-
-          this is where youtube's gonna be. defaulted state:hide
+          <section id="youtubeVideo" class="example">
+              </section>          
+              <main>  
+              </main>
         </div>
         <div id="puzzleSection" class="row-fluid content-section">
           this is where puzzel's gonna be. defaulted state:hide
@@ -195,5 +211,6 @@
     </section>
 
     <script src="./assets/javascript/javascript.js"></script>
+    <script type="text/javascript" src="assets/javascript/workout-javascript.js"></script>
   </body>
 </html>
