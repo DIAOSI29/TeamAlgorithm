@@ -471,10 +471,10 @@ object {
 } */
 
 #timerSection {
-  background-color: grey;
+  background: none;
   padding-top: 5px;
-  width: 450px;
-  height: 550px;
+  width: 600px;
+  height: 700px;
   color: white;
   display: block !important;
  
@@ -507,28 +507,28 @@ span {
 }
 
 .settings button:hover {
-  color: #aef;
+  color: #ffee10;
 }
 
 .clock {
   font-family: "Orbitron", sans-serif;
   border-radius: 50%;
   border: solid 2px #aef;
-  width: 300px;
-  height: 300px;
+  width: 400px;
+  height: 400px;
   margin-left: auto;
   margin-right: auto;
   text-align: center;
 }
 
 #break-text {
-  font-size: 20px;
-  margin-top: 60px;
+  font-size: 40px;
+  margin-top: 80px;
   visibility: hidden;
 }
 
 #time-display {
-  font-size: 65px;
+  font-size: 80px;
   margin-bottom: 0px;
 }
 
@@ -540,10 +540,10 @@ span {
 }
 
 .controls button {
-  margin-top: 20px;
-  width: 100px;
-  height: 30px;
-  border: 1px solid #aef;
+  margin: 20px;
+  width: 150px;
+  height: 50px;
+  border: 4px solid #aef;
   outline: none;
   background: none;
   border-radius: 5px;
@@ -555,8 +555,15 @@ span {
 }
 
 .controls button:hover {
-  background-color: #aef;
+  /* background-color: #aef; */
+  color: #ffee10;
+  box-shadow: 0 0 10px #ffee10;
+  text-shadow: 0 0 5px #ffee10;
+  border-color: #ffee10;
+  
 }
+
+
 
 .cord {
   padding-top: 45px;
