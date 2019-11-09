@@ -313,10 +313,9 @@ h1 {
 } */
 
 .content-section {
-  height: 500px;
-  background: grey;
+  height: auto;
   width: 90%;
-
+  overflow: hidden;
   margin: 0 auto 20px;
 }
 
