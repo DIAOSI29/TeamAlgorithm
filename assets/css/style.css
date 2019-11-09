@@ -116,9 +116,10 @@ body {
 }
 
 @keyframes tipsy {
-  0 {
+  0% {
     transform: translateX(-50%) translateY(-50%) rotate(0deg);
   }
+
   100% {
     transform: translateX(-50%) translateY(-50%) rotate(360deg);
   }
@@ -455,7 +456,10 @@ ul li a:hover {
 /*Kervin start*/
 /*Kervin end*/
 /*Piotr start*/
-
+object {
+  height: 100vh;
+  width: 100%;
+}
 /*Piotr end*/
 /*Firoz start*/
 /*Firoz end*/
