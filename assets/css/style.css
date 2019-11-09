@@ -116,9 +116,10 @@ body {
 }
 
 @keyframes tipsy {
-  0 {
+  0% {
     transform: translateX(-50%) translateY(-50%) rotate(0deg);
   }
+
   100% {
     transform: translateX(-50%) translateY(-50%) rotate(360deg);
   }
@@ -408,23 +409,23 @@ object {
 #timerSection {
   /* background-color: grey; */
   padding-top: 5px;
- 
 }
 
-.settings{
+.settings {
   width: 60%;
   margin-top: 20px;
   margin-left: 20%;
   margin-right: 20%;
-  font-family: 'Orbitron', sans-serif;
+  font-family: "Orbitron", sans-serif;
 }
 
-.settings p,span{
+.settings p,
+span {
   text-align: center;
   font-size: 18px;
 }
 
-.settings button{
+.settings button {
   width: 50px;
   height: 50px;
   padding: 10px;
@@ -433,12 +434,12 @@ object {
   background: none;
 }
 
-.settings button:hover{
+.settings button:hover {
   color: #aef;
 }
 
-.clock{
-  font-family: 'Orbitron', sans-serif;
+.clock {
+  font-family: "Orbitron", sans-serif;
   border-radius: 50%;
   border: solid 2px #aef;
   width: 300px;
@@ -459,15 +460,14 @@ object {
   margin-bottom: 0px;
 }
 
-.newton-cradle{
+.newton-cradle {
   width: 110px;
   height: 100px;
   margin-left: auto;
   margin-right: auto;
-
 }
 
-.controls button{
+.controls button {
   margin-top: 20px;
   width: 100px;
   height: 30px;
@@ -478,67 +478,60 @@ object {
 }
 
 .controls {
-  font-family: 'Orbitron', sans-serif;
+  font-family: "Orbitron", sans-serif;
 }
 
-.controls button:hover{
+.controls button:hover {
   background-color: #aef;
 }
 
-.cord{
-  padding-top:45px;
-  width:15px;
+.cord {
+  padding-top: 45px;
+  width: 15px;
   transform: rotate(0deg);
-  transform-origin:50% 50%;
-  float:left;
+  transform-origin: 50% 50%;
+  float: left;
 }
 
-
-.ball{
-  background:#aef;
-  width:15px;
-  height:15px;
-  float:left;
-  border-radius:50%;
+.ball {
+  background: #aef;
+  width: 15px;
+  height: 15px;
+  float: left;
+  border-radius: 50%;
 }
 
-.leftMove{
-  animation: leftBall .5s ease-in-out 0s infinite alternate;
+.leftMove {
+  animation: leftBall 0.5s ease-in-out 0s infinite alternate;
 }
-.rightMove{
-  animation: rightBall .5s ease-in-out 0s infinite alternate;
-}
-
-
-@keyframes leftBall
-{
-0% {
-  transform: rotate(0deg) translateY(0px);
-  }
-/*this pauses the ball at the begining*/
-50% {
-  transform: rotate(0deg) translateY(0px);
-  }
-100% {
-  transform: rotate(50deg) translateY(-20px);
-  }
-
+.rightMove {
+  animation: rightBall 0.5s ease-in-out 0s infinite alternate;
 }
 
-@keyframes rightBall
-{
-0% {
-  transform: rotate(-50deg) translateY(-20px);
+@keyframes leftBall {
+  0% {
+    transform: rotate(0deg) translateY(0px);
   }
-/*this pauses the ball at the begining*/
-50% {
-  transform: rotate(0deg) translateY(0px);
+  /*this pauses the ball at the begining*/
+  50% {
+    transform: rotate(0deg) translateY(0px);
   }
-100% {
-  transform: rotate(0deg) translateY(0px)
-      translateX(0px);
+  100% {
+    transform: rotate(50deg) translateY(-20px);
   }
+}
 
+@keyframes rightBall {
+  0% {
+    transform: rotate(-50deg) translateY(-20px);
+  }
+  /*this pauses the ball at the begining*/
+  50% {
+    transform: rotate(0deg) translateY(0px);
+  }
+  100% {
+    transform: rotate(0deg) translateY(0px) translateX(0px);
+  }
 }
 
 /*Jayson end*/
