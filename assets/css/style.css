@@ -316,6 +316,7 @@ h1 {
   height: auto;
   width: 90%;
   overflow: hidden;
+  background: transparent;
   margin: 0 auto 20px;
 }
 
