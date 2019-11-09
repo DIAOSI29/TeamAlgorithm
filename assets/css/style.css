@@ -398,13 +398,16 @@ span {
 /*Jayson start*/
 
 /* body{
-  color: white;
+  color: black;
   font-family: 'Josefin Slab';
 } */
 
 #timerSection {
   background-color: grey;
   padding-top: 5px;
+  width: 450px;
+  height: 550px;
+  color: white;;
  
 }
 
@@ -414,11 +417,13 @@ span {
   margin-left: 20%;
   margin-right: 20%;
   font-family: 'Orbitron', sans-serif;
+  color: white;
 }
 
 .settings p,span{
   text-align: center;
   font-size: 18px;
+  color: white;
 }
 
 .settings button{
@@ -428,6 +433,7 @@ span {
   border: none;
   outline: none;
   background: none;
+  color: white;
 }
 
 .settings button:hover{
@@ -447,7 +453,7 @@ span {
 
 #break-text {
   font-size: 20px;
-  margin-top: 70px;
+  margin-top: 60px;
   visibility: hidden;
 }
 
@@ -472,6 +478,7 @@ span {
   outline: none;
   background: none;
   border-radius: 5px;
+  color: white;
 }
 
 .controls {
