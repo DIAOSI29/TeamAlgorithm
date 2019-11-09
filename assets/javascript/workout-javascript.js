@@ -24,8 +24,8 @@ $(document).ready(function () {
     }
 
     function mainVid(id) {
-        $('#exerciseSection').html(`
-					<iframe width="560" height="315" src="https://www.youtube.com/embed/${id}" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+        $('#youtubeVideo').html(`
+					<iframe width="100%" height="400" src="https://www.youtube.com/embed/${id}" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 				`);
     }
 
@@ -45,7 +45,7 @@ $(document).ready(function () {
 
 								<img src="${thumb}" alt="" class="thumb">
 								<div class="details">
-									<h4>${title}</h4>
+									<h5>${title}</h5>
 									<p>${desc}</p>
 								</div>
 
