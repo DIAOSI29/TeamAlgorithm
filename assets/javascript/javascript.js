@@ -261,5 +261,42 @@ $(document).ready(function() {
       '<object data="https://melonek.github.io/Team-Algorithm-Trivia/"/>'
     );
   });
+  let timeSect = $("#timerSection");
+  let exerciseSect = $("#exerciseSection");
+  let puzzleSect = $("#puzzleSection");
+  let trafficSect = $("#trafficSection");
+  let newsSect = $("#news");
+
+  $("#timerBtn").on("click", function() {
+    $(exerciseSect).hide();
+    $(puzzleSect).hide();
+    $(trafficSect).hide();
+    $(newsSect).hide();
+    $(timeSect).show();
+  });
+
+  $("#exerciseBtn").on("click", function() {
+    $(exerciseSect).show();
+    $(timeSect).hide();
+    $(puzzleSect).hide();
+    $(trafficSect).hide();
+    $(newsSect).hide();
+  });
+
+  $("#puzzleBtn").on("click", function() {
+    $(puzzleSect).show();
+    $(timeSect).hide();
+    $(trafficSect).hide();
+    $(newsSect).hide();
+    $(exerciseSect).hide();
+  });
+
+  $("#trafficBtn").on("click", function() {
+    $(trafficSect).show();
+    $(timeSect).hide();
+    $(puzzleSect).hide();
+    $(newsSect).hide();
+    $(exerciseSect).hide();
+  });
   //section Piotr end//
 });
