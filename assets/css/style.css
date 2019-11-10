@@ -481,18 +481,20 @@ object {
 }
 
 .settings {
-  width: 60%;
+  width: 100%;
   margin-top: 20px;
-  margin-left: 20%;
-  margin-right: 20%;
+  margin-bottom: 20px;
+  margin-left: 0;
+  /* margin-right: 20%;  */
   font-family: 'Orbitron', sans-serif;
   color: white;
+
 }
 
 .settings p,
 span {
   text-align: center;
-  font-size: 18px;
+  font-size: 25px;
   color: white;
 }
 
@@ -507,7 +509,14 @@ span {
 }
 
 .settings button:hover {
+  background-color: green;
   color: #ffee10;
+  box-shadow: 0 0 10px #ffee10;
+  text-shadow: 0 0 5px #ffee10;
+  border-color: #ffee10;
+  /* font-size: 30px; */
+  border: 1px solid #ffee10;
+
 }
 
 .clock {
@@ -555,12 +564,12 @@ span {
 }
 
 .controls button:hover {
-  /* background-color: #aef; */
+  background-color: green;
   color: #ffee10;
   box-shadow: 0 0 10px #ffee10;
   text-shadow: 0 0 5px #ffee10;
   border-color: #ffee10;
-  
+  font-size: 30px;
 }
 
 
