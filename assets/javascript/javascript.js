@@ -1,4 +1,5 @@
 $(document).ready(function() {
+  getLocation();
   //--Piotr--This section makes sure all sections are hidden--//
   //--Only 4 buttons are visible..rest hidden--//
   $("#exerciseSection").hide();
@@ -18,25 +19,60 @@ $(document).ready(function() {
     $(this).removeClass("fa-flip-horizontal");
   });
 
+  $(".aaa").click(function() {
+    $(this).toggleClass("onClickOption");
+  });
+
   $("#timerBtn").click(() => {
     let section = $("#timerSection");
+    $("#exerciseBtn").removeClass("onClickOption");
+    $("#puzzleBtn").removeClass("onClickOption");
+    $("#trafficBtn").removeClass("onClickOption");
     section.toggle();
+  });
+
+  $("#b1").click(() => {
+    $("#timerSection").hide();
   });
 
   $("#exerciseBtn").click(() => {
+    $("#timerBtn").removeClass("onClickOption");
+    $("#puzzleBtn").removeClass("onClickOption");
+    $("#trafficBtn").removeClass("onClickOption");
     let section = $("#exerciseSection");
     section.toggle();
   });
+
+  $("#b2").click(() => {
+    $("#exerciseSection").hide();
+  });
+
   $("#puzzleBtn").click(() => {
+    $("#timerBtn").removeClass("onClickOption");
+    $("#exerciseBtn").removeClass("onClickOption");
+    $("#trafficBtn").removeClass("onClickOption");
     let section = $("#puzzleSection");
     section.toggle();
   });
-  $("#trafficBtn").click(() => {
-    let section = $("#trafficSection");
-    section.toggle();
+
+  $("#b3").click(() => {
+    $("#puzzleSection").hide();
   });
 
-  //timer//
+  $("#trafficBtn").click(() => {
+    $("#timerBtn").removeClass("onClickOption");
+    $("#exerciseBtn").removeClass("onClickOption");
+    $("#puzzleBtn").removeClass("onClickOption");
+    let section = $("#trafficSection");
+    section.toggle();
+    initMap();
+  });
+
+  $("#b4").click(() => {
+    $("#trafficSection").hide();
+  });
+
+  //clock//
   function makeTimer() {
     var days = moment().format("ddd");
     var hours = moment().format("HH");
@@ -52,7 +88,55 @@ $(document).ready(function() {
   setInterval(function() {
     makeTimer();
   }, 1000);
+  //clock//
 
+  //google api start//
+  var x = document.getElementById("demo");
+
+  function getLocation() {
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition(showPosition);
+    } else {
+      x.innerHTML = "Geolocation is not supported by this browser.";
+    }
+  }
+
+  var lat = "";
+  var lon = "";
+  function showPosition(position) {
+    lat = position.coords.latitude;
+    lon = position.coords.longitude;
+    console.log(lat);
+    console.log(lon);
+    // x.innerHTML =
+    //   "Latitude: " +
+    //   position.coords.latitude +
+    //   "<br>Longitude: " +
+    //   position.coords.longitude;
+  }
+
+  function initMap() {
+    var map = new google.maps.Map(document.getElementById("map"), {
+      zoom: 14,
+      center: { lat: lat, lng: lon }
+    });
+
+    var trafficLayer = new google.maps.TrafficLayer();
+    trafficLayer.setMap(map);
+  }
+  //google api end//
+  //news api start//
+  function getNews() {
+    let queryUrlNews =
+      "https://newsapi.org/v2/everything?q=coding&apiKey=b76dbe4baac44acda36c8e6baa935fb4";
+    $.ajax({ url: queryUrlNews, method: "GET" }).then(response => {
+      let newsUrl = response.articles.url;
+      $("#newsIframe").attr("src", newsUrl);
+    });
+  }
+
+  getNews();
+  //news api end//
   //section Tian end//
 
   //BEFORE EVERYONE FINISH THEIR OWN PART I THINK WE SHOULD SPLIT OUR JS CODE SO THAT WE CAN EASILY KEEP TRACK OF OUR STAFF AND MAKE CHANGES//
@@ -62,49 +146,48 @@ $(document).ready(function() {
   //section Kervin end//
 
   //section Jayson start//
-  $(document).ready(function() {
-    var timer = new Timer(25 * 60 * 1000);
 
-    $("#start").on("click", function() {
-      startTimer(timer);
-    });
+  var timer = new Timer(25 * 60 * 1000);
 
-    $("#stop").on("click", function() {
-      timer.stop();
-    });
+  $("#start").on("click", function() {
+    startTimer(timer);
+  });
 
-    $("#reset").on("click", function() {
+  $("#stop").on("click", function() {
+    timer.stop();
+  });
+
+  $("#reset").on("click", function() {
+    timer.reset();
+  });
+
+  $("#breakSub").on("click", function() {
+    var isBreak = $("#break-text").css("visibility") == "visible";
+    if (isBreak) {
       timer.reset();
-    });
-
-    $("#breakSub").on("click", function() {
-      var isBreak = $("#break-text").css("visibility") == "visible";
-      if (isBreak) {
-        timer.reset();
-      }
-      setNewTime($("#breakTime"), -1, isBreak);
-    });
-    $("#breakAdd").on("click", function() {
-      var isBreak = $("#break-text").css("visibility") == "visible";
-      if (isBreak) {
-        timer.reset();
-      }
-      setNewTime($("#breakTime"), 1, isBreak);
-    });
-    $("#totSub").on("click", function() {
-      var isBreak = $("#break-text").css("visibility") == "visible";
-      if (!isBreak) {
-        timer.reset();
-      }
-      setNewTime($("#totTime"), -1, isBreak);
-    });
-    $("#totAdd").on("click", function() {
-      var isBreak = $("#break-text").css("visibility") == "visible";
-      if (!isBreak) {
-        timer.reset();
-      }
-      setNewTime($("#totTime"), 1, isBreak);
-    });
+    }
+    setNewTime($("#breakTime"), -1, isBreak);
+  });
+  $("#breakAdd").on("click", function() {
+    var isBreak = $("#break-text").css("visibility") == "visible";
+    if (isBreak) {
+      timer.reset();
+    }
+    setNewTime($("#breakTime"), 1, isBreak);
+  });
+  $("#totSub").on("click", function() {
+    var isBreak = $("#break-text").css("visibility") == "visible";
+    if (!isBreak) {
+      timer.reset();
+    }
+    setNewTime($("#totTime"), -1, isBreak);
+  });
+  $("#totAdd").on("click", function() {
+    var isBreak = $("#break-text").css("visibility") == "visible";
+    if (!isBreak) {
+      timer.reset();
+    }
+    setNewTime($("#totTime"), 1, isBreak);
   });
 
   function setNewTime(element, diff, isBreak) {
@@ -265,13 +348,12 @@ $(document).ready(function() {
   let exerciseSect = $("#exerciseSection");
   let puzzleSect = $("#puzzleSection");
   let trafficSect = $("#trafficSection");
-  let newsSect = $("#news");
 
   $("#timerBtn").on("click", function() {
     $(exerciseSect).hide();
     $(puzzleSect).hide();
     $(trafficSect).hide();
-    $(newsSect).hide();
+
     $(timeSect).show();
   });
 
@@ -280,14 +362,13 @@ $(document).ready(function() {
     $(timeSect).hide();
     $(puzzleSect).hide();
     $(trafficSect).hide();
-    $(newsSect).hide();
   });
 
   $("#puzzleBtn").on("click", function() {
     $(puzzleSect).show();
     $(timeSect).hide();
     $(trafficSect).hide();
-    $(newsSect).hide();
+
     $(exerciseSect).hide();
   });
 
@@ -295,7 +376,7 @@ $(document).ready(function() {
     $(trafficSect).show();
     $(timeSect).hide();
     $(puzzleSect).hide();
-    $(newsSect).hide();
+
     $(exerciseSect).hide();
   });
   //section Piotr end//
