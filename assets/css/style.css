@@ -496,7 +496,7 @@ ul li a:hover {
 
 #news {
   border: 2px solid white;
-  margin-top: 150px;
+  margin-top: 90px;
   height: 100vh;
   text-align: center;
 }
@@ -620,7 +620,7 @@ span {
 
 #break-text {
   font-size: 40px;
-  margin-top: 80px;
+  margin-top: 90px;
   visibility: hidden;
 }
 
@@ -670,7 +670,7 @@ span {
   box-shadow: 0 0 10px white;
   text-shadow: 0 0 5px white;
   font-size: 35px;
-  border: 4px solid white;
+  border: 5px solid white;
 }
 
 .cord {
@@ -726,11 +726,8 @@ span {
   .clock {
     width: 350px;
     height: 350px;
-    margin: 20px;
+    margin: auto;
   }
-  /* #timerSection {
-    margin-left: ;
-  } */
   #break-text {
     margin-top: 50px;
   }
@@ -739,17 +736,5 @@ span {
   }
 }
 
-@media (max-width: 667px) {
-  .clock {
-    margin: 1px;
-  }
-  #timerSection {
-    /* width: 375px; */
-    margin-left: 1px;
-  }
-  .sections {
-    padding: 0px;
-  }
-}
 
 /*Jayson end*/
