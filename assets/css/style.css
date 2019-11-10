@@ -541,7 +541,6 @@ object {
   height: 700px;
   color: white;
   display: block !important;
- 
 }
 
 .settings {
@@ -549,7 +548,7 @@ object {
   margin-top: 20px;
   margin-left: 20%;
   margin-right: 20%;
-  font-family: 'Orbitron', sans-serif;
+  font-family: "Orbitron", sans-serif;
   color: white;
 }
 
@@ -624,10 +623,7 @@ span {
   box-shadow: 0 0 10px #ffee10;
   text-shadow: 0 0 5px #ffee10;
   border-color: #ffee10;
-  
 }
-
-
 
 .cord {
   padding-top: 45px;

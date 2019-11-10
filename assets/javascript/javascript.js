@@ -40,8 +40,8 @@ $(document).ready(function() {
     $("#timerBtn").removeClass("onClickOption");
     $("#puzzleBtn").removeClass("onClickOption");
     $("#trafficBtn").removeClass("onClickOption");
-    let section = $("#exerciseSection");
-    section.toggle();
+    let section1 = $("#exerciseSection");
+    section1.toggle();
   });
 
   $("#b2").click(() => {
@@ -52,8 +52,8 @@ $(document).ready(function() {
     $("#timerBtn").removeClass("onClickOption");
     $("#exerciseBtn").removeClass("onClickOption");
     $("#trafficBtn").removeClass("onClickOption");
-    let section = $("#puzzleSection");
-    section.toggle();
+    let section2 = $("#puzzleSection");
+    section2.toggle();
   });
 
   $("#b3").click(() => {
@@ -64,8 +64,8 @@ $(document).ready(function() {
     $("#timerBtn").removeClass("onClickOption");
     $("#exerciseBtn").removeClass("onClickOption");
     $("#puzzleBtn").removeClass("onClickOption");
-    let section = $("#trafficSection");
-    section.toggle();
+    let section3 = $("#trafficSection");
+    section3.toggle();
     initMap();
   });
 
