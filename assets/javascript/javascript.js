@@ -6,6 +6,10 @@ $(document).ready(function() {
   $("#puzzleSection").hide();
   $("#timerSection").hide();
   $("#trafficSection").hide();
+  $("#puzzleSection").hide();
+  $("#b3").hide();
+  $("#b1").hide();
+
   //--End--//
 
   //section Tian start//
@@ -33,14 +37,15 @@ $(document).ready(function() {
 
   $("#b1").click(() => {
     $("#timerSection").hide();
+    $("#puzzleSection").hide();
   });
 
   $("#exerciseBtn").click(() => {
     $("#timerBtn").removeClass("onClickOption");
     $("#puzzleBtn").removeClass("onClickOption");
     $("#trafficBtn").removeClass("onClickOption");
-    let section = $("#exerciseSection");
-    section.toggle();
+    let section1 = $("#exerciseSection");
+    section1.toggle();
   });
 
   $("#b2").click(() => {
@@ -51,20 +56,24 @@ $(document).ready(function() {
     $("#timerBtn").removeClass("onClickOption");
     $("#exerciseBtn").removeClass("onClickOption");
     $("#trafficBtn").removeClass("onClickOption");
+    let section2 = $("#puzzleSection");
+    section2.toggle();
     let section = $("#puzzleSection");
     section.toggle();
+    $("#b3").show();
   });
 
   $("#b3").click(() => {
     $("#puzzleSection").hide();
+    $("#b3").hide();
   });
 
   $("#trafficBtn").click(() => {
     $("#timerBtn").removeClass("onClickOption");
     $("#exerciseBtn").removeClass("onClickOption");
     $("#puzzleBtn").removeClass("onClickOption");
-    let section = $("#trafficSection");
-    section.toggle();
+    let section3 = $("#trafficSection");
+    section3.toggle();
     initMap();
   });
 
@@ -344,6 +353,7 @@ $(document).ready(function() {
       '<object data="https://melonek.github.io/Team-Algorithm-Trivia/"/>'
     );
   });
+
   let timeSect = $("#timerSection");
   let exerciseSect = $("#exerciseSection");
   let puzzleSect = $("#puzzleSection");
@@ -353,7 +363,6 @@ $(document).ready(function() {
     $(exerciseSect).hide();
     $(puzzleSect).hide();
     $(trafficSect).hide();
-
     $(timeSect).show();
   });
 
@@ -368,7 +377,6 @@ $(document).ready(function() {
     $(puzzleSect).show();
     $(timeSect).hide();
     $(trafficSect).hide();
-
     $(exerciseSect).hide();
   });
 
@@ -376,7 +384,6 @@ $(document).ready(function() {
     $(trafficSect).show();
     $(timeSect).hide();
     $(puzzleSect).hide();
-
     $(exerciseSect).hide();
   });
   //section Piotr end//
