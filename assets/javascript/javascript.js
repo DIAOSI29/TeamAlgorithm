@@ -6,6 +6,7 @@ $(document).ready(function() {
   $("#puzzleSection").hide();
   $("#timerSection").hide();
   $("#trafficSection").hide();
+  $("#b3").hide();
   //--End--//
 
   //section Tian start//
@@ -33,6 +34,7 @@ $(document).ready(function() {
 
   $("#b1").click(() => {
     $("#timerSection").hide();
+    $("#puzzleSection").hide();
   });
 
   $("#exerciseBtn").click(() => {
@@ -53,10 +55,12 @@ $(document).ready(function() {
     $("#trafficBtn").removeClass("onClickOption");
     let section = $("#puzzleSection");
     section.toggle();
+    $("#b3").show();
   });
 
   $("#b3").click(() => {
     $("#puzzleSection").hide();
+    $("#b3").hide();
   });
 
   $("#trafficBtn").click(() => {
@@ -353,7 +357,6 @@ $(document).ready(function() {
     $(exerciseSect).hide();
     $(puzzleSect).hide();
     $(trafficSect).hide();
-
     $(timeSect).show();
   });
 
@@ -368,7 +371,6 @@ $(document).ready(function() {
     $(puzzleSect).show();
     $(timeSect).hide();
     $(trafficSect).hide();
-
     $(exerciseSect).hide();
   });
 
@@ -376,7 +378,6 @@ $(document).ready(function() {
     $(trafficSect).show();
     $(timeSect).hide();
     $(puzzleSect).hide();
-
     $(exerciseSect).hide();
   });
   //section Piotr end//
