@@ -34,6 +34,7 @@ body {
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: 2fr 0 1fr;
+    margin-bottom: 90px;
   }
   .optionButton {
     /* list-style-type: none;
@@ -57,6 +58,7 @@ body {
     display: grid;
     grid-template-columns: 1fr minmax(5px, 20px) minmax(200px, 2fr);
     grid-template-rows: auto;
+    margin-bottom: 90px;
   }
 
   /* #clock-section {
@@ -70,7 +72,7 @@ body {
 .welcomePage {
   margin: 0;
   width: 100%;
-  height: 100vh;
+  height: 100%;
   font-family: "Fredoka One", cursive;
   color: #fff;
   background: linear-gradient(
@@ -81,7 +83,7 @@ body {
     #0f7499,
     #00c99a
   );
-  background-size: 400% 400%;
+  background-size: 500% 600%;
   animation: gradientBG 15s ease infinite;
 }
 
@@ -223,7 +225,7 @@ body {
 }
 
 h2 {
-  margin: 40px auto;
+  margin: 60px auto;
   color: rgb(221, 221, 221);
   font-family: "Playfair Display SC", serif;
 }
@@ -327,7 +329,7 @@ h2 {
   width: 100%;
   overflow: hidden;
   background: transparent;
-  margin: 40px 0;
+  margin: 40px 0 60px 0;
   color: white;
 }
 
@@ -474,15 +476,37 @@ ul li a:hover {
 
 /*button section end*/
 
+.sections {
+  margin-top: 80px;
+}
 /*map section start*/
 #map {
-  height: 100vh;
+  height: 95vh;
 }
 
 #trafficSection {
   height: auto;
 }
 /*map section end*/
+/*new section start*/
+#newsIframe {
+  height: 100%;
+  width: 100%;
+}
+
+#news {
+  border: 2px solid white;
+  margin-top: 150px;
+  height: 100vh;
+  text-align: center;
+}
+#newsDiv {
+  margin-top: 40px;
+  height: 100vh;
+  text-align: center;
+}
+/*new section end*/
+
 /*for sections start*/
 #exerciseSection {
   overflow: scroll;
@@ -527,20 +551,16 @@ object {
 /*Piotr end*/
 /*Firoz start*/
 /*Firoz end*/
-/*Jayson start*/
 
-/* body{
-  color: black;
-  font-family: 'Josefin Slab';
-} */
+/*Jayson start //////////////////////////////*/
+.sections {
+  padding: 0px;
+}
 
 #timerSection {
-  background: none;
-  padding-top: 5px;
-  width: 600px;
-  height: 700px;
   color: white;
   display: block !important;
+  height: 100%;
 }
 
 .settings {
@@ -549,20 +569,30 @@ object {
   margin-left: 20%;
   margin-right: 20%;
   font-family: "Orbitron", sans-serif;
+  border: 3px solid white;
+  padding: 20px;
+  height: auto;
+  margin: auto;
+}
+
+.settings {
+  width: 100%;
+  font-family: "Orbitron", sans-serif;
   color: white;
+  margin: auto;
+  height: auto;
 }
 
 .settings p,
 span {
   text-align: center;
-  font-size: 18px;
+  font-size: 25px;
   color: white;
 }
 
 .settings button {
   width: 50px;
   height: 50px;
-  padding: 10px;
   border: none;
   outline: none;
   background: none;
@@ -570,15 +600,19 @@ span {
 }
 
 .settings button:hover {
-  color: #ffee10;
+  background-color: green;
+  box-shadow: 0 0 20px white;
+  text-shadow: 0 0 5px white;
+  border-color: white;
+  border: 1px solid white;
 }
 
 .clock {
   font-family: "Orbitron", sans-serif;
   border-radius: 50%;
-  border: solid 2px #aef;
-  width: 400px;
-  height: 400px;
+  border: solid 2px white;
+  width: 450px;
+  height: 450px;
   margin-left: auto;
   margin-right: auto;
   text-align: center;
@@ -595,26 +629,37 @@ span {
   margin-bottom: 0px;
 }
 
+#puzzleSection {
+  margin: 0;
+  padding: 0;
+}
+
+#game {
+}
 .newton-cradle {
   width: 110px;
   height: 100px;
   margin-left: auto;
   margin-right: auto;
-}
-
-.controls button {
-  margin: 20px;
-  width: 150px;
-  height: 50px;
-  border: 4px solid #aef;
-  outline: none;
-  background: none;
-  border-radius: 5px;
-  color: white;
+  margin-top: 80px;
 }
 
 .controls {
   font-family: "Orbitron", sans-serif;
+  height: 180px;
+  margin-top: 10px;
+  padding-top: 30px;
+  height: auto;
+  font-size: 25px;
+}
+
+.controls button {
+  margin: 20px;
+  width: 180px;
+  height: 80px;
+  outline: none;
+  background: none;
+  color: white;
 }
 
 .controls button:hover {
@@ -623,6 +668,11 @@ span {
   box-shadow: 0 0 10px #ffee10;
   text-shadow: 0 0 5px #ffee10;
   border-color: #ffee10;
+  background-color: green;
+  box-shadow: 0 0 10px white;
+  text-shadow: 0 0 5px white;
+  font-size: 35px;
+  border: 4px solid white;
 }
 
 .cord {
@@ -671,6 +721,36 @@ span {
   }
   100% {
     transform: rotate(0deg) translateY(0px) translateX(0px);
+  }
+}
+
+@media (max-width: 767px) {
+  .clock {
+    width: 350px;
+    height: 350px;
+    margin: 20px;
+  }
+  /* #timerSection {
+    margin-left: ;
+  } */
+  #break-text {
+    margin-top: 50px;
+  }
+  .newton-cradle {
+    margin-top: 10px;
+  }
+}
+
+@media (max-width: 667px) {
+  .clock {
+    margin: 1px;
+  }
+  #timerSection {
+    /* width: 375px; */
+    margin-left: 1px;
+  }
+  .sections {
+    padding: 0px;
   }
 }
 
