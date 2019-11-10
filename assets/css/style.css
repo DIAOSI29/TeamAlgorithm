@@ -162,7 +162,7 @@ body {
   padding: 0.9em 0.4em;
   position: absolute;
   left: 50%;
-  width: 100%;
+  width: 75%;
   top: 50%;
   display: block;
   border: 15px solid red;
@@ -196,17 +196,16 @@ body {
 
 #loginBtnLogo:hover {
   color: green;
-  -webkit-transform: scaleX(-1);
-  transform: scaleX(-1);
+  transform: rotate(180deg);
 }
 #loginBtn {
   margin: auto;
-  font-size: 5rem;
+  font-size: 3rem;
   font-family: "Nunito", sans-serif;
 }
 #loginBtn:hover {
   margin: auto;
-  font-size: 5rem;
+  font-size: 3rem;
   font-family: "Nunito", sans-serif;
   text-decoration: none;
 }
@@ -492,6 +491,7 @@ ul li a:hover {
 #newsIframe {
   height: 100%;
   width: 100%;
+  background-color: rgb(190, 190, 190);
 }
 
 #news {
@@ -537,6 +537,7 @@ ul li a:hover {
   color: black;
   font-weight: 800;
 }
+
 /*for sections end*/
 
 /*Tian end*/
@@ -564,8 +565,6 @@ object {
   width: 600px;
   height: 700px;
   color: white;
-  display: block !important;
- 
 }
 
 .settings {
@@ -573,7 +572,7 @@ object {
   margin-top: 20px;
   margin-left: 20%;
   margin-right: 20%;
-  font-family: 'Orbitron', sans-serif;
+  font-family: "Orbitron", sans-serif;
   color: white;
 }
 
@@ -648,10 +647,7 @@ span {
   box-shadow: 0 0 10px #ffee10;
   text-shadow: 0 0 5px #ffee10;
   border-color: #ffee10;
-  
 }
-
-
 
 .cord {
   padding-top: 45px;

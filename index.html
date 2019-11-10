@@ -28,7 +28,7 @@
       rel="stylesheet"
     />
 
-    <link href='https://fonts.googleapis.com/css?family=Orbitron' rel='stylesheet' type='text/css'>
+     <link href='https://fonts.googleapis.com/css?family=Orbitron' rel='stylesheet' type='text/css'>
 
     <script
       src="https://kit.fontawesome.com/a1562d6d36.js"
@@ -51,10 +51,9 @@
           fun, info and relaxation
         </h1>
         <a href="#" id="loginBtn">
-          <i id="loginBtnLogo" class="fas fa-toggle-on fa-flip-horizontal"></i>
-          CLICK ME</a
-        >
-      </div>
+          <i id="loginBtnLogo" class="fas fa-toggle-on"></i>
+          GO</a>
+       </div>
     </div>
 
     <video
@@ -129,6 +128,7 @@
       </div>
       <div class="sections container-fluid">
         <div id="timerSection" class="row-fluid content-section">
+          <div id="timerDiv">
             <button class="closeBtn" id="b1">CLOSE</button>
           <h1 class="text-center"></h1>
           <div class="settings row">
@@ -184,10 +184,12 @@
               <button type="button" id="start">Start</button>
               <button type="button" id="stop">Stop</button>    
               <button type="button" id="reset">Reset</button>
-          </div>      
+          </div>   
+          
           <audio id="notify">
               <source src="assets/assets/notification.mp3" type="audio/mpeg"/>
           </audio>
+        </div> 
         </div>
         <div id="exerciseSection" class="row-fluid content-section">
           <button class="closeBtn" id="b2">CLOSE</button>
@@ -206,7 +208,7 @@
          <div id="news" class="row-fluid content-section">
           <div class="container-fluid" id="newsDiv">
             <h2>YOUR DAILY NEWS FEED</h2>
-            <iframe src="https://www.businessinsider.com.au/space-hotels-could-launch-in-2021-photos-2019-10" frameborder="0" id="newsIframe"></iframe>
+            <iframe src="" frameborder="0" id="newsIframe"></iframe>
            </div>
           </div>
         </div>
