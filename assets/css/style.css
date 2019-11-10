@@ -34,6 +34,7 @@ body {
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: 2fr 0 1fr;
+    margin-bottom: 90px;
   }
   .optionButton {
     /* list-style-type: none;
@@ -57,6 +58,7 @@ body {
     display: grid;
     grid-template-columns: 1fr minmax(5px, 20px) minmax(200px, 2fr);
     grid-template-rows: auto;
+    margin-bottom: 90px;
   }
 
   /* #clock-section {
@@ -70,7 +72,7 @@ body {
 .welcomePage {
   margin: 0;
   width: 100%;
-  height: 100vh;
+  height: 100%;
   font-family: "Fredoka One", cursive;
   color: #fff;
   background: linear-gradient(
@@ -81,7 +83,7 @@ body {
     #0f7499,
     #00c99a
   );
-  background-size: 400% 400%;
+  background-size: 500% 600%;
   animation: gradientBG 15s ease infinite;
 }
 
@@ -223,7 +225,7 @@ body {
 }
 
 h2 {
-  margin: 40px auto;
+  margin: 60px auto;
   color: rgb(221, 221, 221);
   font-family: "Playfair Display SC", serif;
 }
@@ -327,7 +329,7 @@ h2 {
   width: 100%;
   overflow: hidden;
   background: transparent;
-  margin: 40px 0;
+  margin: 40px 0 60px 0;
   color: white;
 }
 
@@ -474,15 +476,37 @@ ul li a:hover {
 
 /*button section end*/
 
+.sections {
+  margin-top: 80px;
+}
 /*map section start*/
 #map {
-  height: 100vh;
+  height: 95vh;
 }
 
 #trafficSection {
   height: auto;
 }
 /*map section end*/
+/*new section start*/
+#newsIframe {
+  height: 100%;
+  width: 100%;
+}
+
+#news {
+  border: 2px solid white;
+  margin-top: 150px;
+  height: 100vh;
+  text-align: center;
+}
+#newsDiv {
+  margin-top: 40px;
+  height: 100vh;
+  text-align: center;
+}
+/*new section end*/
+
 /*for sections start*/
 #exerciseSection {
   overflow: scroll;
