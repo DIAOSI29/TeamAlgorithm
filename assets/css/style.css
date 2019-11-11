@@ -727,10 +727,7 @@ span {
     height: 350px;
     margin: auto;
   }
-<<<<<<< HEAD
 
-=======
->>>>>>> margin changes for each section
   #break-text {
     margin-top: 50px;
   }
@@ -739,21 +736,4 @@ span {
   }
 }
 
-<<<<<<< HEAD
-@media (max-width: 667px) {
-  .clock {
-    margin: 1px;
-  }
-  #timerSection {
-    margin-left: 1px;
-  }
-  .sections {
-    padding: 0px;
-  }
-}
-=======
-
-
-
->>>>>>> margin changes for each section
 /*Jayson end*/
