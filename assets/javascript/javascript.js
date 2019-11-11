@@ -32,6 +32,7 @@ $(document).ready(function () {
     $("#exerciseBtn").removeClass("onClickOption");
     $("#puzzleBtn").removeClass("onClickOption");
     $("#trafficBtn").removeClass("onClickOption");
+    $("#b1").show();
     section.toggle();
   });
 
@@ -64,6 +65,9 @@ $(document).ready(function () {
   });
 
   $("#b3").click(() => {
+    // $("#puzzleSection").hide();
+    // $("#b3").hide();
+    $("#puzzleSection").empty();
     $("#puzzleSection").hide();
     $("#b3").hide();
   });
