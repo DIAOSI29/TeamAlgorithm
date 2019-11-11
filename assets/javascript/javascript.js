@@ -1,4 +1,5 @@
 $(document).ready(function () {
+  getWeather();
   getLocation();
   //--Piotr--This section makes sure all sections are hidden--//
   //--Only 4 buttons are visible..rest hidden--//
