@@ -139,7 +139,6 @@ $(document).ready(function () {
       let newsUrl = response.articles[10].url;
       $("#newsIframe").attr("src", newsUrl);
     });
-    console.log(response.articles);
   }
 
   getNews();
