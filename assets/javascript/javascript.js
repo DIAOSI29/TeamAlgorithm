@@ -193,9 +193,13 @@ $(document).ready(function () {
     $(".conditions").empty();
     $(".conditions").append('<img src="' + imgWeatherURL + '">');
     $("#city.location").text(locationName);
+    console.log("Location: " + locationName);
     $(".temp").text(temperature + "°");
+    console.log("Temperature: " + temperature);
     $(".minTemp").text("Lo " + tempMin + "°");
+    console.log("Min Temp: " + tempMin);
     $(".maxTemp").text("Hi " + tempMax + "°");
+    console.log("Max Temp: " + tempMax);
   }
 
   function kelvinToCelsius(kelvin) {
