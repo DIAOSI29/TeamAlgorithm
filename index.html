@@ -7,14 +7,23 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge" />
   <link rel="stylesheet" type="text/css" href="./assets/css/style.css" />
 
+  <link rel="stylesheet" type="text/css" href="assets/css/workout-style.css" />
+
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
     integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
   <link href="https://fonts.googleapis.com/css?family=Caveat&display=swap" rel="stylesheet" />
   <link href="https://fonts.googleapis.com/css?family=Fredoka+One&display=swap" rel="stylesheet" />
+
+  <link href="https://fonts.googleapis.com/css?family=Chathura|Playfair+Display+SC&display=swap" rel="stylesheet" />
+
+  <link href='https://fonts.googleapis.com/css?family=Orbitron' rel='stylesheet' type='text/css'>
+
   <script src="https://kit.fontawesome.com/a1562d6d36.js" crossorigin="anonymous"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
 
   <title>Team Algorithm App</title>
+  <link rel="stylesheet" href="assets/css/style.css">
 </head>
 
 <body>
@@ -33,12 +42,12 @@
     </div>
   </div>
 
+  <video id="videoBG" poster="" src="./assets/assets/bg.mp4" autoplay muted loop>
+    <source id="video" src="" type="video/mp4" />
+  </video>
   <section class="appPage visuallyhidden" id="appPage">
-    <video id="videoBG" poster="" src="" autoplay muted loop>
-      <source id="video" src="" type="video/mp4" />
-    </video>
     <div class="top-row">
-      <div id="weather-widget">
+      <div id="weather-widget align-self-center">
         <div id="weather_wrapper">
           <div class="weatherCard">
             <div class="currentTemp">
@@ -57,65 +66,139 @@
         </div>
       </div>
       <div id="userText"></div>
-      <div id="clock-section">
-        <div id="clock" class="col"></div>
+
+      <div id="clock-section" class="d-flex justify-content-center">
+        <div id="timer" style="white-space: nowrap">
+          <div id="days"></div>
+          <div id="hours"></div>
+          <div id="minutes"></div>
+          <div id="seconds"></div>
+        </div>
       </div>
+
     </div>
     <div class="button-row container-fluid">
-      <H1>I AM LOOKING FOR SOME</H1>
-      <div class="buttonList d-flex justify-content-between">
-        <button class="optionButton" id="timerBtn">
-          BREAK
-        </button>
-        <button class="optionButton" id="exerciseBtn">
-          EXERCISE
-        </button>
-        <button class="optionButton" id="puzzleBtn">FUN</button>
-        <button class="optionButton" id="trafficBtn">
-          TRAFFIC INFO
-        </button>
+      <h2>I WANT</h2>
+      <div class="buttonList">
+        <ul id="buttons d-flex justify-content-center">
+          <li class="optionButton">Break </br> </br>
+            <a href="#timerSection">
+              </br><i class="fas fa-user-clock aaa" id="timerBtn"></i>
+            </a>
+          </li>
+          <li class="optionButton"> Exercise </br> </br>
+            <a href="#exerciseSection"></br>
+              <i class="fab fa-youtube aaa" id="exerciseBtn"></i>
+            </a>
+          </li>
+          <li class="optionButton"> Fun </br> </br>
+            <a href="#puzzleSection">
+              </br><i class="fas fa-puzzle-piece aaa" id="puzzleBtn"></i>
+            </a>
+          </li>
+          <li class="optionButton">Info </br> </br>
+            <a href="#trafficSection">
+              </br><i class="fas fa-map-marked-alt aaa" id="trafficBtn"></i>
+            </a>
+          </li>
+        </ul>
       </div>
     </div>
     <div class="sections container-fluid">
       <div id="timerSection" class="row-fluid content-section">
-        this is where timer's gonna be. defaulted state:hide
+        <button class="closeBtn" id="b1">CLOSE</button>
+        <h1 class="text-center"></h1>
+        <div class="settings row">
+          <div class="col-md-6 col-sm-6 col-lg-6">
+            <p>
+              Work
+              <br>
+              <button id="totSub">-</button>
+              <span id="totTime">25</span>
+              <button id="totAdd">+</button>
+            </p>
+          </div>
+          <div class="col-md-6 col-sm-6 col-lg-6">
+            <p>
+              Break
+              <br>
+              <button class="break" id="breakSub">-</button>
+              <span class="break" id="breakTime">5</span>
+              <button class="break" id="breakAdd">+</button>
+            </p>
+          </div>
+        </div>
+        <div class="clock">
+          <p id="break-text" class="break-text">
+            Break!
+          </p>
+          <p id="time-display">25:00</p>
+          <div class="newton-cradle">
+            <div id="leftBall" class="cord">
+              <div class="ball"></div>
+            </div>
+            <div class="cord">
+              <div class="ball"></div>
+            </div>
+            <div class="cord">
+              <div class="ball"></div>
+            </div>
+            <div class="cord">
+              <div class="ball"></div>
+            </div>
+            <div class="cord">
+              <div class="ball"></div>
+            </div>
+            <div class="cord">
+              <div class="ball"></div>
+            </div>
+            <div id="rightBall" class="cord">
+              <div class="ball" id="first"></div>
+            </div>
+          </div>
+        </div>
+        <div class="controls text-center">
+          <button type="button" id="start">Start</button>
+          <button type="button" id="stop">Stop</button>
+          <button type="button" id="reset">Reset</button>
+        </div>
+        <audio id="notify">
+          <source src="assets/assets/notification.mp3" type="audio/mpeg" />
+        </audio>
       </div>
       <div id="exerciseSection" class="row-fluid content-section">
-        <button class="youtubeBtn">
-          neck and hopefully with an neck png
-        </button>
-        <button class="youtubeBtn">
-          shoulder and hopefully with an shoulder png
-        </button>
-        <button class="youtubeBtn">eye and hopefully with an eye png</button>
-        <button class="youtubeBtn">
-          back and hopefully with an back png
-        </button>
-        <button class="youtubeBtn">
-          waist and hopefully with an waist png
-        </button>
-        <form>
-          <div class="form-group">
-            <label for="exampleFormControlInput1">search for other exercises</label>
-            <input type="text" class="form-control" id="exerciseText" placeholder="arm" />
-          </div>
-        </form>
-
-        this is where youtube's gonna be. defaulted state:hide
+        <button class="closeBtn" id="b2">CLOSE</button>
+        <section id="youtubeVideo" class="example">
+        </section>
+        <main>
+        </main>
       </div>
-      <div id="puzzleSection" class="row-fluid content-section">
-        this is where puzzel's gonna be. defaulted state:hide
+      <button class="closeBtn" id="b3">CLOSE</button>
+      <div id="game">
+        <div id="puzzleSection" class="row-fluid content-section">
+        </div>
       </div>
       <div id="trafficSection" class="row-fluid content-section">
-        this is where google API's gonna be. defaulted state:hide
+        <button class="closeBtn" id="b4">CLOSE</button>
+        <div id="map"></div>
       </div>
       <div id="news" class="row-fluid content-section">
-        this where news gonna be
+        <div class="container-fluid" id="newsDiv">
+          <h2>YOUR DAILY NEWS FEED</h2>
+          <iframe src="https://www.businessinsider.com.au/space-hotels-could-launch-in-2021-photos-2019-10"
+            frameborder="0" id="newsIframe"></iframe>
+        </div>
       </div>
     </div>
+
+
   </section>
 
   <script src="./assets/javascript/javascript.js"></script>
+  <script type="text/javascript" src="assets/javascript/workout-javascript.js"></script>
+  <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCNoDPLu9IZO9ylODNwx8AlxOn8r9mA5xk&callback=initMap">
+    </script>
 </body>
 
 </html>
