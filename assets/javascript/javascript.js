@@ -58,12 +58,11 @@ $(document).ready(function() {
     $("#trafficBtn").removeClass("onClickOption");
     let section2 = $("#puzzleSection");
     section2.toggle();
-    let section = $("#puzzleSection");
-    section.toggle();
     $("#b3").show();
   });
 
   $("#b3").click(() => {
+    $("#puzzleSection").empty();
     $("#puzzleSection").hide();
     $("#b3").hide();
   });
