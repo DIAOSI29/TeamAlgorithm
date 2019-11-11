@@ -8,7 +8,6 @@ $(document).ready(function() {
   $("#trafficSection").hide();
   $("#puzzleSection").hide();
   $("#b3").hide();
-  $("#b1").hide();
 
   //--End--//
 
@@ -32,6 +31,7 @@ $(document).ready(function() {
     $("#exerciseBtn").removeClass("onClickOption");
     $("#puzzleBtn").removeClass("onClickOption");
     $("#trafficBtn").removeClass("onClickOption");
+    $("#b1").show();
     section.toggle();
   });
 
