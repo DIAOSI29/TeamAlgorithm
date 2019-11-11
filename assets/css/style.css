@@ -301,7 +301,6 @@ h2 {
 }
 /* .minTemp::before {
   display: block;
-
   font-size: 40px;
   left: 6px;
   top: -4px;
@@ -316,7 +315,6 @@ h2 {
 }
 /* .maxTemp::before {
   display: block;
-
   font-size: 25px;
   left: -10px;
   position: absolute;
@@ -420,7 +418,6 @@ span {
   left: 50%;
   transform: translate(-50%, -50%);
 }
-
 ul li {
   list-style: none;
   margin: 0 15px;
@@ -575,9 +572,11 @@ object {
   height: auto;
   margin: auto;
 }
-​ .settings {
+
+.settings{
   width: 100%;
-  font-family: "Orbitron", sans-serif;
+  font-family: "Orbitron",sans-serif;
+
   color: white;
   margin: auto;
   height: auto;
@@ -734,4 +733,6 @@ span {
   }
 }
 
+
 /*Jayson end*/
+
