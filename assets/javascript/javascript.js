@@ -64,6 +64,7 @@ $(document).ready(function() {
   });
 
   $("#b3").click(() => {
+    $("#puzzleSection").empty();
     $("#puzzleSection").hide();
     $("#b3").hide();
   });
