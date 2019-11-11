@@ -1,5 +1,15 @@
 $(document).ready(function () {
 
+    /*
+    === 
+    === 
+    === CODES INCLUDED HERE HAS BEEN PLACED
+    ===         ON JAVASCRIPT.JS
+    === 
+    === 
+    */
+
+    /*
     var currentWeather = "";
     var imgWeatherURL = "";
     var locationName = "";
@@ -8,7 +18,7 @@ $(document).ready(function () {
     var tempMax = 0;
 
     function getWeather() {
-        console.log("getWeather()");
+        console.log("f:getWeather() - START");
         let queryURL = "https://api.openweathermap.org/data/2.5/weather?" + "apikey=6505c8f81f8f8f339430c41eea7b91b1&";
         var getIP = 'http://ip-api.com/json/';
         var openWeatherMap = 'http://api.openweathermap.org/data/2.5/weather'
@@ -28,39 +38,22 @@ $(document).ready(function () {
             })
         });
     }
-    getWeather();
-
     function setWeather() {
-
-        // $("#weather").append('<img src="' + imgWeatherURL + '">');
-        // let dataIMG = $('<div>');
-        // let dataLocName = $('<div>');
-        // let dataTemp = $('<div>');
-        // let dataTempMin = $('<div>');
-        // let dataTempMax = $('<div>');
-
-        // $("#weather").append(dataIMG.append('<img src="' + imgWeatherURL + '">'));
-        // $("#weather").append(dataLocName.text("Location: " + locationName));
-        // $("#weather").append(dataTemp.text("Temperature(°C): " + temperature));
-        // $("#weather").append(dataTempMin.text("Minimum Temperature(°C): " + tempMin));
-        // $("#weather").append(dataTempMax.text("Minimum Temperature(°C): " + tempMax));
-
-        $("#weather").append($('<div>').append('<img src="' + imgWeatherURL + '">'));
-        $("#weather").append($('<div>').text("Location: " + locationName));
-        $("#weather").append($('<div>').text("Temperature(°C): " + temperature));
-        $("#weather").append($('<div>').text("Minimum Temperature(°C): " + tempMin));
-        $("#weather").append($('<div>').text("Minimum Temperature(°C): " + tempMax));
+        console.log("f:setWeather() - START");
+        $(".ExtraInfo").css("height", "60px");
+        $(".currentWeather").css("position", "absolute");
+        $(".currentWeather").css("place-items", "normal");
+        $(".conditions").empty();
+        $(".conditions").append('<img src="' + imgWeatherURL + '">');
+        $("#city.location").text(locationName);
+        $(".temp").text(temperature + "°");
+        $(".minTemp").text("Lo " + tempMin + "°");
+        $(".maxTemp").text("Hi " + tempMax + "°");
     }
-
-    // var getIP = 'http://ip-api.com/json/';
-    // var openWeatherMap = 'http://api.openweathermap.org/data/2.5/weather'
-    // $.getJSON(getIP).done(function (location) {
-
-    // })
 
     function kelvinToCelsius(kelvin) {
         // return (kelvin - 273.15) * 1.80 + 32; =======> RETURN TO FAHRENHEIT
         return (kelvin - 273.15);
     }
-
-})
+*/
+});

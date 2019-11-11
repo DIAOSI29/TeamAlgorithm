@@ -1,6 +1,5 @@
 $(document).ready(function () {
   getLocation();
-  getWeather(); // ==> For Weather Widget
   //--Piotr--This section makes sure all sections are hidden--//
   //--Only 4 buttons are visible..rest hidden--//
   $("#exerciseSection").hide();
@@ -178,6 +177,23 @@ $(document).ready(function () {
         setWeather();
       })
     });
+  }
+  function setWeather() {
+    console.log("f:setWeather() - START");
+    $(".ExtraInfo").css("height", "60px");
+    $(".currentWeather").css("position", "absolute");
+    $(".currentWeather").css("place-items", "normal");
+    $(".conditions").empty();
+    $(".conditions").append('<img src="' + imgWeatherURL + '">');
+    $("#city.location").text(locationName);
+    $(".temp").text(temperature + "°");
+    $(".minTemp").text("Lo " + tempMin + "°");
+    $(".maxTemp").text("Hi " + tempMax + "°");
+  }
+
+  function kelvinToCelsius(kelvin) {
+    // return (kelvin - 273.15) * 1.80 + 32; =======> RETURN TO FAHRENHEIT
+    return (kelvin - 273.15);
   }
 
   //section Kervin end//
