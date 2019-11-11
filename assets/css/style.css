@@ -558,7 +558,7 @@ object {
 #timerSection {
   color: white;
 
-  display: block;
+
   height: 100%;
 }
 
@@ -568,6 +568,7 @@ object {
   margin-left: 20%;
   margin-right: 20%;
   font-family: "Orbitron", sans-serif;
+  border: 3px solid white;
   padding: 20px;
   height: auto;
   margin: auto;
@@ -576,18 +577,19 @@ object {
 .settings{
   width: 100%;
   font-family: "Orbitron",sans-serif;
-
   color: white;
   margin: auto;
   height: auto;
 }
-​ .settings p,
+
+.settings p,
 span {
   text-align: center;
   font-size: 25px;
   color: white;
 }
-​ .settings button {
+
+.settings button {
   width: 50px;
   height: 50px;
   border: none;
@@ -595,7 +597,8 @@ span {
   background: none;
   color: white;
 }
-​ .settings button:hover {
+
+.settings button:hover {
   background-color: green;
   box-shadow: 0 0 20px white;
   text-shadow: 0 0 5px white;
@@ -626,7 +629,7 @@ span {
 }
 
 #puzzleSection {
-  margin-top: 30px;
+  margin: 0;
   padding: 0;
 }
 
@@ -668,6 +671,7 @@ span {
   text-shadow: 0 0 5px white;
   font-size: 35px;
   border: 5px solid white;
+
 }
 
 .cord {
@@ -735,4 +739,3 @@ span {
 
 
 /*Jayson end*/
-
