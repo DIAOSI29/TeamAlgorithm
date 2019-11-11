@@ -1,4 +1,4 @@
-$(document).ready(function() {
+$(document).ready(function () {
   getLocation();
   //--Piotr--This section makes sure all sections are hidden--//
   //--Only 4 buttons are visible..rest hidden--//
@@ -23,7 +23,7 @@ $(document).ready(function() {
     $(this).removeClass("fa-flip-horizontal");
   });
 
-  $(".aaa").click(function() {
+  $(".aaa").click(function () {
     $(this).toggleClass("onClickOption");
   });
 
@@ -94,7 +94,7 @@ $(document).ready(function() {
     $("#seconds").html("<span>S</span></br>" + seconds);
   }
 
-  setInterval(function() {
+  setInterval(function () {
     makeTimer();
   }, 1000);
   //clock//
@@ -149,46 +149,92 @@ $(document).ready(function() {
 
   //section Kervin start//
 
+  var currentWeather = "";
+  var imgWeatherURL = "";
+  var locationName = "";
+  var temperature = "";
+  var tempMin = 0;
+  var tempMax = 0;
+
+  function getWeather() {
+    console.log("f:getWeather() - START");
+    let queryURL = "https://api.openweathermap.org/data/2.5/weather?" + "apikey=6505c8f81f8f8f339430c41eea7b91b1&";
+    var getIP = 'http://ip-api.com/json/';
+    var openWeatherMap = 'http://api.openweathermap.org/data/2.5/weather'
+    $.getJSON(getIP).done(function (location) {
+      queryURL += "lon=" + location.lon + "&lat=" + location.lat;
+      $.ajax({ url: queryURL, method: "GET" }).then(function (weather) {
+        console.log(weather.name + " " + weather.main.temp);
+        console.log(weather);
+        locationName = weather.name;
+        temperature = kelvinToCelsius(weather.main.temp).toFixed(1);
+        imgWeatherURL = "http://openweathermap.org/img/wn/" + weather.weather[0].icon + "@2x.png";
+        tempMin = kelvinToCelsius(weather.main.temp_min).toFixed(1);
+        tempMax = kelvinToCelsius(weather.main.temp_max).toFixed(1);
+        console.log(imgWeatherURL);
+
+        setWeather();
+      })
+    });
+  }
+  function setWeather() {
+    console.log("f:setWeather() - START");
+    $(".ExtraInfo").css("height", "60px");
+    $(".currentWeather").css("position", "absolute");
+    $(".currentWeather").css("place-items", "normal");
+    $(".conditions").empty();
+    $(".conditions").append('<img src="' + imgWeatherURL + '">');
+    $("#city.location").text(locationName);
+    $(".temp").text(temperature + "°");
+    $(".minTemp").text("Lo " + tempMin + "°");
+    $(".maxTemp").text("Hi " + tempMax + "°");
+  }
+
+  function kelvinToCelsius(kelvin) {
+    // return (kelvin - 273.15) * 1.80 + 32; =======> RETURN TO FAHRENHEIT
+    return (kelvin - 273.15);
+  }
+
   //section Kervin end//
 
   //section Jayson start//
 
   var timer = new Timer(25 * 60 * 1000);
 
-  $("#start").on("click", function() {
+  $("#start").on("click", function () {
     startTimer(timer);
   });
 
-  $("#stop").on("click", function() {
+  $("#stop").on("click", function () {
     timer.stop();
   });
 
-  $("#reset").on("click", function() {
+  $("#reset").on("click", function () {
     timer.reset();
   });
 
-  $("#breakSub").on("click", function() {
+  $("#breakSub").on("click", function () {
     var isBreak = $("#break-text").css("visibility") == "visible";
     if (isBreak) {
       timer.reset();
     }
     setNewTime($("#breakTime"), -1, isBreak);
   });
-  $("#breakAdd").on("click", function() {
+  $("#breakAdd").on("click", function () {
     var isBreak = $("#break-text").css("visibility") == "visible";
     if (isBreak) {
       timer.reset();
     }
     setNewTime($("#breakTime"), 1, isBreak);
   });
-  $("#totSub").on("click", function() {
+  $("#totSub").on("click", function () {
     var isBreak = $("#break-text").css("visibility") == "visible";
     if (!isBreak) {
       timer.reset();
     }
     setNewTime($("#totTime"), -1, isBreak);
   });
-  $("#totAdd").on("click", function() {
+  $("#totAdd").on("click", function () {
     var isBreak = $("#break-text").css("visibility") == "visible";
     if (!isBreak) {
       timer.reset();
@@ -240,25 +286,25 @@ $(document).ready(function() {
     this.elapsed = 0;
     this.duration = duration + 300;
     this.updateRate = 100;
-    this.onTimeUp = function() {
+    this.onTimeUp = function () {
       this.stop();
       stopAnimation();
       changePhase(this);
     };
-    this.onTimeUpdate = function() {
+    this.onTimeUpdate = function () {
       var timeLeft = this.duration - this.elapsed;
       this.displayTime();
     };
   }
 
-  Timer.prototype.start = function() {
+  Timer.prototype.start = function () {
     this.paused = false;
     this.previousTime = new Date().getTime();
     this.keepCounting();
     startAnimation();
   };
 
-  Timer.prototype.displayTime = function() {
+  Timer.prototype.displayTime = function () {
     var timeLeft = this.duration - this.elapsed;
     var minutes = Math.floor((timeLeft / (1000 * 60)) % 60);
     var seconds = Math.floor((timeLeft / 1000) % 60);
@@ -272,7 +318,7 @@ $(document).ready(function() {
     $("#time-display").text(formattedTime);
   };
 
-  Timer.prototype.keepCounting = function() {
+  Timer.prototype.keepCounting = function () {
     if (this.paused) {
       return true;
     }
@@ -288,23 +334,23 @@ $(document).ready(function() {
       return true;
     }
     var that = this;
-    setTimeout(function() {
+    setTimeout(function () {
       that.keepCounting();
     }, this.updateRate);
   };
 
-  Timer.prototype.stop = function() {
+  Timer.prototype.stop = function () {
     this.paused = true;
     stopAnimation();
   };
 
-  Timer.prototype.reset = function() {
+  Timer.prototype.reset = function () {
     this.stop();
     this.elapsed = 0;
     this.displayTime();
   };
 
-  Timer.prototype.setDuration = function(duration) {
+  Timer.prototype.setDuration = function (duration) {
     this.duration = duration + 300;
   };
 
@@ -356,28 +402,28 @@ $(document).ready(function() {
   let puzzleSect = $("#puzzleSection");
   let trafficSect = $("#trafficSection");
 
-  $("#timerBtn").on("click", function() {
+  $("#timerBtn").on("click", function () {
     $(exerciseSect).hide();
     $(puzzleSect).hide();
     $(trafficSect).hide();
     $(timeSect).show();
   });
 
-  $("#exerciseBtn").on("click", function() {
+  $("#exerciseBtn").on("click", function () {
     $(exerciseSect).show();
     $(timeSect).hide();
     $(puzzleSect).hide();
     $(trafficSect).hide();
   });
 
-  $("#puzzleBtn").on("click", function() {
+  $("#puzzleBtn").on("click", function () {
     $(puzzleSect).show();
     $(timeSect).hide();
     $(trafficSect).hide();
     $(exerciseSect).hide();
   });
 
-  $("#trafficBtn").on("click", function() {
+  $("#trafficBtn").on("click", function () {
     $(trafficSect).show();
     $(timeSect).hide();
     $(puzzleSect).hide();
