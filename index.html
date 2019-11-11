@@ -37,10 +37,9 @@
         fun, info and relaxation
       </h1>
       <a href="#" id="loginBtn">
-        <i id="loginBtnLogo" class="fas fa-toggle-on fa-flip-horizontal"></i>
-        CLICK ME</a>
+        <i id="loginBtnLogo" class="fas fa-toggle-on"></i>
+        GO</a>
     </div>
-  </div>
   </div>
 
   <video id="videoBG" poster="" src="./assets/assets/bg.mp4" autoplay muted loop>
@@ -107,65 +106,68 @@
     </div>
     <div class="sections container-fluid">
       <div id="timerSection" class="row-fluid content-section">
-        <button class="closeBtn" id="b1">CLOSE</button>
-        <h1 class="text-center"></h1>
-        <div class="settings row">
-          <div class="col-md-6 col-sm-6 col-lg-6">
-            <p>
-              Work
-              <br>
-              <button id="totSub">-</button>
-              <span id="totTime">25</span>
-              <button id="totAdd">+</button>
+        <div id="timerDiv">
+          <button class="closeBtn" id="b1">CLOSE</button>
+          <h1 class="text-center"></h1>
+          <div class="settings row">
+            <div class="col-md-6 col-sm-6 col-lg-6">
+              <p>
+                Work
+                <br>
+                <button id="totSub">-</button>
+                <span id="totTime">25</span>
+                <button id="totAdd">+</button>
+              </p>
+            </div>
+            <div class="col-md-6 col-sm-6 col-lg-6">
+              <p>
+                Break
+                <br>
+                <button class="break" id="breakSub">-</button>
+                <span class="break" id="breakTime">5</span>
+                <button class="break" id="breakAdd">+</button>
+              </p>
+            </div>
+          </div>
+          <div class="clock">
+            <p id="break-text" class="break-text">
+              Break!
             </p>
-          </div>
-          <div class="col-md-6 col-sm-6 col-lg-6">
-            <p>
-              Break
-              <br>
-              <button class="break" id="breakSub">-</button>
-              <span class="break" id="breakTime">5</span>
-              <button class="break" id="breakAdd">+</button>
-            </p>
-          </div>
-        </div>
-        <div class="clock">
-          <p id="break-text" class="break-text">
-            Break!
-          </p>
-          <p id="time-display">25:00</p>
-          <div class="newton-cradle">
-            <div id="leftBall" class="cord">
-              <div class="ball"></div>
-            </div>
-            <div class="cord">
-              <div class="ball"></div>
-            </div>
-            <div class="cord">
-              <div class="ball"></div>
-            </div>
-            <div class="cord">
-              <div class="ball"></div>
-            </div>
-            <div class="cord">
-              <div class="ball"></div>
-            </div>
-            <div class="cord">
-              <div class="ball"></div>
-            </div>
-            <div id="rightBall" class="cord">
-              <div class="ball" id="first"></div>
+            <p id="time-display">25:00</p>
+            <div class="newton-cradle">
+              <div id="leftBall" class="cord">
+                <div class="ball"></div>
+              </div>
+              <div class="cord">
+                <div class="ball"></div>
+              </div>
+              <div class="cord">
+                <div class="ball"></div>
+              </div>
+              <div class="cord">
+                <div class="ball"></div>
+              </div>
+              <div class="cord">
+                <div class="ball"></div>
+              </div>
+              <div class="cord">
+                <div class="ball"></div>
+              </div>
+              <div id="rightBall" class="cord">
+                <div class="ball" id="first"></div>
+              </div>
             </div>
           </div>
+          <div class="controls text-center">
+            <button type="button" id="start">Start</button>
+            <button type="button" id="stop">Stop</button>
+            <button type="button" id="reset">Reset</button>
+          </div>
+
+          <audio id="notify">
+            <source src="assets/assets/notification.mp3" type="audio/mpeg" />
+          </audio>
         </div>
-        <div class="controls text-center">
-          <button type="button" id="start">Start</button>
-          <button type="button" id="stop">Stop</button>
-          <button type="button" id="reset">Reset</button>
-        </div>
-        <audio id="notify">
-          <source src="assets/assets/notification.mp3" type="audio/mpeg" />
-        </audio>
       </div>
       <div id="exerciseSection" class="row-fluid content-section">
         <button class="closeBtn" id="b2">CLOSE</button>
@@ -186,8 +188,7 @@
       <div id="news" class="row-fluid content-section">
         <div class="container-fluid" id="newsDiv">
           <h2>YOUR DAILY NEWS FEED</h2>
-          <iframe src="https://www.businessinsider.com.au/space-hotels-could-launch-in-2021-photos-2019-10"
-            frameborder="0" id="newsIframe"></iframe>
+          <iframe src="" frameborder="0" id="newsIframe"></iframe>
         </div>
       </div>
     </div>

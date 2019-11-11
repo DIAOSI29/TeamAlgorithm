@@ -118,11 +118,6 @@ $(document).ready(function () {
     lon = position.coords.longitude;
     console.log(lat);
     console.log(lon);
-    // x.innerHTML =
-    //   "Latitude: " +
-    //   position.coords.latitude +
-    //   "<br>Longitude: " +
-    //   position.coords.longitude;
   }
 
   function initMap() {
@@ -136,13 +131,16 @@ $(document).ready(function () {
   }
   //google api end//
   //news api start//
+
+  console.log("where is my news");
   function getNews() {
     let queryUrlNews =
-      "https://newsapi.org/v2/everything?q=coding&apiKey=b76dbe4baac44acda36c8e6baa935fb4";
+      "https://newsapi.org/v2/top-headlines?country=au&apiKey=b76dbe4baac44acda36c8e6baa935fb4";
     $.ajax({ url: queryUrlNews, method: "GET" }).then(response => {
-      let newsUrl = response.articles.url;
+      let newsUrl = response.articles[10].url;
       $("#newsIframe").attr("src", newsUrl);
     });
+    console.log(response.articles);
   }
 
   getNews();
@@ -416,5 +414,5 @@ $(document).ready(function () {
     $(puzzleSect).hide();
     $(exerciseSect).hide();
   });
-  //section Piotr end//
 });
+//section Piotr end//
