@@ -186,7 +186,7 @@ $(document).ready(function () {
   }
   function setWeather() {
     console.log("f:setWeather() - START");
-    $(".ExtraInfo").css("height", "60px");
+    $(".ExtraInfo").css("height", "80px");
     $(".currentWeather").css("position", "absolute");
     $(".currentWeather").css("place-items", "normal");
     $(".conditions").empty();
