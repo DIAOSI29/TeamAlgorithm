@@ -59,8 +59,6 @@ $(document).ready(function () {
     $("#trafficBtn").removeClass("onClickOption");
     let section2 = $("#puzzleSection");
     section2.toggle();
-    let section = $("#puzzleSection");
-    section.toggle();
     $("#b3").show();
   });
 
@@ -140,7 +138,7 @@ $(document).ready(function () {
     let queryUrlNews =
       "https://newsapi.org/v2/top-headlines?country=au&apiKey=b76dbe4baac44acda36c8e6baa935fb4";
     $.ajax({ url: queryUrlNews, method: "GET" }).then(response => {
-      let newsUrl = response.articles[10].url;
+      let newsUrl = response.articles[1].url;
       $("#newsIframe").attr("src", newsUrl);
     });
   }
@@ -162,9 +160,11 @@ $(document).ready(function () {
 
   function getWeather() {
     console.log("f:getWeather() - START");
-    let queryURL = "https://api.openweathermap.org/data/2.5/weather?" + "apikey=6505c8f81f8f8f339430c41eea7b91b1&";
-    var getIP = 'http://ip-api.com/json/';
-    var openWeatherMap = 'http://api.openweathermap.org/data/2.5/weather'
+    let queryURL =
+      "https://api.openweathermap.org/data/2.5/weather?" +
+      "apikey=6505c8f81f8f8f339430c41eea7b91b1&";
+    var getIP = "http://ip-api.com/json/";
+    var openWeatherMap = "http://api.openweathermap.org/data/2.5/weather";
     $.getJSON(getIP).done(function (location) {
       queryURL += "lon=" + location.lon + "&lat=" + location.lat;
       $.ajax({ url: queryURL, method: "GET" }).then(function (weather) {
@@ -172,13 +172,16 @@ $(document).ready(function () {
         console.log(weather);
         locationName = weather.name;
         temperature = kelvinToCelsius(weather.main.temp).toFixed(1);
-        imgWeatherURL = "http://openweathermap.org/img/wn/" + weather.weather[0].icon + "@2x.png";
+        imgWeatherURL =
+          "http://openweathermap.org/img/wn/" +
+          weather.weather[0].icon +
+          "@2x.png";
         tempMin = kelvinToCelsius(weather.main.temp_min).toFixed(1);
         tempMax = kelvinToCelsius(weather.main.temp_max).toFixed(1);
         console.log(imgWeatherURL);
 
         setWeather();
-      })
+      });
     });
   }
   function setWeather() {
@@ -196,7 +199,7 @@ $(document).ready(function () {
 
   function kelvinToCelsius(kelvin) {
     // return (kelvin - 273.15) * 1.80 + 32; =======> RETURN TO FAHRENHEIT
-    return (kelvin - 273.15);
+    return kelvin - 273.15;
   }
 
   //section Kervin end//
