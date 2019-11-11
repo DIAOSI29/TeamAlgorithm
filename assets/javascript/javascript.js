@@ -8,7 +8,6 @@ $(document).ready(function () {
   $("#trafficSection").hide();
   $("#puzzleSection").hide();
   $("#b3").hide();
-  $("#b1").hide();
 
   //--End--//
 
