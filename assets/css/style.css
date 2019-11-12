@@ -45,7 +45,7 @@ body {
     text-align: center;
     font-family: "Playfair Display SC", serif;
     display: inline-block; */
-    margin: 0 20px;
+    margin: 0 10px;
   }
   body {
     background: url("poster.jpg");
@@ -229,8 +229,8 @@ h2 {
   font-family: "Playfair Display SC", serif;
 }
 #weather_wrapper {
-  min-width: 400px;
-  margin: 30px;
+  min-width: 300px;
+  margin: 0;
   display: inline-block;
 }
 .weatherCard {
@@ -240,9 +240,9 @@ h2 {
   position: relative;
 }
 .currentTemp {
-  width: 220px;
-  height: 200px;
-  background: rgb(41, 41, 41);
+  width: 180px;
+  height: 180px;
+  background: transparent;
   position: absolute;
   top: 0;
   left: 0;
@@ -251,12 +251,12 @@ h2 {
   display: grid;
   place-items: center;
   width: 180px;
-  height: 200px;
-  background: rgb(237, 237, 237);
+  height: 180px;
+  background-color: transparent;
   margin: 0;
 
   top: 0;
-  right: 0;
+  right: -60px;
 }
 .temp {
   font-size: 80px;
@@ -264,7 +264,7 @@ h2 {
   display: block;
   font-weight: 300;
   color: rgb(255, 255, 255);
-  padding: 20px 0 0;
+  padding: 20px 20px 0;
 }
 .location {
   color: rgb(255, 255, 255);
@@ -278,6 +278,7 @@ h2 {
   font-family: weathericons;
   font-size: 80px;
   display: block;
+  z-index: 10;
   padding: 20px 0 0;
   text-align: center;
 }
@@ -326,7 +327,7 @@ h2 {
 .content-section {
   height: 100vh;
   width: 100%;
-  overflow: hidden;
+  overflow: scroll;
   background: transparent;
   margin: 40px 0 60px 0;
   color: white;
@@ -341,7 +342,7 @@ h2 {
   text-align: center;
   font-family: "Playfair Display SC", serif;
   display: inline-block;
-  margin: 0 50px;
+  margin: 0 40px;
 }
 
 .button-row {
@@ -361,7 +362,9 @@ h2 {
 #buttons {
   display: grid;
   place-items: center;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-columns:
+    minmax(1fr, 250px) minmax(1fr, 250px) minmax(1fr, 250px)
+    minmax(1fr, 250px);
   width: 100%;
 }
 
@@ -407,6 +410,7 @@ span {
 
 #appPage {
   background: none;
+  width: 100%;
 }
 
 /*button section start*/
@@ -602,7 +606,7 @@ span {
 }
 
 .settings button:hover {
-  background-color: green;
+  background-color: black;
   box-shadow: 0 0 20px white;
   text-shadow: 0 0 5px white;
   border-color: white;
@@ -669,7 +673,7 @@ span {
   text-shadow: 0 0 5px #ffee10;
   border-color: #ffee10;
 
-  background-color: green;
+  background-color: black;
   box-shadow: 0 0 10px white;
   text-shadow: 0 0 5px white;
   font-size: 35px;

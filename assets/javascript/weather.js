@@ -1,6 +1,5 @@
-$(document).ready(function () {
-
-    /*
+$(document).ready(function() {
+  /*
     === 
     === 
     === CODES INCLUDED HERE HAS BEEN PLACED
@@ -8,8 +7,7 @@ $(document).ready(function () {
     === 
     === 
     */
-
-    /*
+  /*
     var currentWeather = "";
     var imgWeatherURL = "";
     var locationName = "";
