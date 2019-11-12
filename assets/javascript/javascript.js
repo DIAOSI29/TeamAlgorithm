@@ -156,7 +156,6 @@ $(document).ready(function() {
       "https://newsapi.org/v2/top-headlines?country=au&category=entertainment&apiKey=b76dbe4baac44acda36c8e6baa935fb4";
     $.ajax({ url: queryUrlNews, method: "GET" }).then(response => {
       let newsUrl = response.articles[3].url;
-      let newsUrl = response.articles[4].url;
       $("#newsIframe").attr("src", newsUrl);
     });
   }
