@@ -153,9 +153,9 @@ $(document).ready(function() {
   console.log("where is my news");
   function getNews() {
     let queryUrlNews =
-      "https://newsapi.org/v2/top-headlines?country=au&apiKey=b76dbe4baac44acda36c8e6baa935fb4";
+      "https://newsapi.org/v2/top-headlines?country=au&category=entertainment&apiKey=b76dbe4baac44acda36c8e6baa935fb4";
     $.ajax({ url: queryUrlNews, method: "GET" }).then(response => {
-      let newsUrl = response.articles[1].url;
+      let newsUrl = response.articles[3].url;
       $("#newsIframe").attr("src", newsUrl);
     });
   }
