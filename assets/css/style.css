@@ -273,22 +273,27 @@ h2 {
   font-weight: 700;
   font-size: 30px;
   display: block;
+  position: relative;
 }
 .conditions {
   font-family: weathericons;
-  font-size: 80px;
-  display: block;
+
+  font-size: 70px;
   z-index: 10;
-  padding: 20px 0 0;
+  padding: 20px 0;
+
   text-align: center;
+  display: relative;
+  left: 100px;
 }
 .ExtraInfo {
   width: 180px;
   height: 50px;
   position: absolute;
-  bottom: 0;
-  right: 0;
-  background: black;
+  bottom: -10px;
+
+  left: 15px;
+  background: transparent;
   font-weight: 700;
   color: rgb(255, 255, 255);
   text-align: center;
@@ -296,7 +301,7 @@ h2 {
 .minTemp {
   width: 50%;
   position: absolute;
-  left: 10px;
+  left: 15px;
   word-spacing: 60px;
   top: 3px;
 }
@@ -310,7 +315,7 @@ h2 {
 } */
 .maxTemp {
   width: 50%;
-  right: -10px;
+  right: -3px;
   position: absolute;
   word-spacing: 60px;
   top: 3px;
@@ -330,6 +335,7 @@ h2 {
   overflow: scroll;
   background: transparent;
   margin: 40px 0 60px 0;
+
   color: white;
 }
 
